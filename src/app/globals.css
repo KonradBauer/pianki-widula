@@ -136,10 +136,10 @@ button, [role="button"] {
 .scrollbar-hide { scrollbar-width: none; }
 .scrollbar-hide::-webkit-scrollbar { display: none; }
 
-.animate-in-up    { animation: fadeInUp    0.7s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards; }
-.animate-in-left  { animation: fadeInLeft  0.7s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards; }
-.animate-in-right { animation: fadeInRight 0.7s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards; }
-.animate-in-fade  { animation: fadeIn      0.7s ease forwards; }
+.animate-in-up    { animation: fadeInUp    0.7s cubic-bezier(0.25, 0.46, 0.45, 0.94) both; }
+.animate-in-left  { animation: fadeInLeft  0.7s cubic-bezier(0.25, 0.46, 0.45, 0.94) both; }
+.animate-in-right { animation: fadeInRight 0.7s cubic-bezier(0.25, 0.46, 0.45, 0.94) both; }
+.animate-in-fade  { animation: fadeIn      0.7s ease both; }
 
 .scroll-line {
   animation: scrollPulse 2s ease-in-out infinite;

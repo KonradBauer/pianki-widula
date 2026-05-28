@@ -21,13 +21,15 @@ export default function OfferCard({
 }: OfferCardProps) {
   const ref = useRef<HTMLDivElement>(null);
   const [visible, setVisible] = useState(false);
+  const fired = useRef(false);
 
   useEffect(() => {
     const el = ref.current;
     if (!el) return;
     const observer = new IntersectionObserver(
       ([entry]) => {
-        if (entry.isIntersecting) {
+        if (entry.isIntersecting && !fired.current) {
+          fired.current = true;
           setVisible(true);
           observer.disconnect();
         }
@@ -38,9 +40,10 @@ export default function OfferCard({
     return () => observer.disconnect();
   }, []);
 
-  const style: CSSProperties = visible
-    ? { animationDelay: `${index * 0.1}s` }
-    : { opacity: 0 };
+  const style: CSSProperties = {
+    animationDelay: `${index * 0.1}s`,
+    ...(!visible && { opacity: 0 }),
+  };
 
   return (
     <div
