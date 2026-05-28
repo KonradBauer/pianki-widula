@@ -1,3 +1,6 @@
+"use client";
+
+import { useEffect, useState } from "react";
 import AnimatedSection from "@/components/ui/AnimatedSection";
 import ContactForm from "./ContactForm";
 import Map from "./Map";
@@ -30,7 +33,7 @@ const HOURS = [
 
 function isOpenNow(): boolean {
   const now = new Date();
-  const day = now.getDay(); // 0=Sun, 6=Sat
+  const day = now.getDay();
   const hour = now.getHours() + now.getMinutes() / 60;
   if (day === 0) return false;
   if (day === 6) return hour >= 8 && hour < 13;
@@ -38,7 +41,13 @@ function isOpenNow(): boolean {
 }
 
 export default function Contact() {
-  const open = isOpenNow();
+  const [open, setOpen] = useState<boolean | null>(null);
+
+  useEffect(() => {
+    setOpen(isOpenNow());
+    const timer = setInterval(() => setOpen(isOpenNow()), 60_000);
+    return () => clearInterval(timer);
+  }, []);
 
   return (
     <section id="kontakt" className="section-py bg-bg">
@@ -78,14 +87,14 @@ export default function Contact() {
                     key={item.label}
                     className="bg-cream-light/40 rounded-xl p-4 border border-cream/20"
                   >
-                    <span className="text-xl mb-2 block">{item.icon}</span>
+                    <span className="text-xl mb-2 block" aria-hidden="true">{item.icon}</span>
                     <span className="text-xs font-semibold text-navy tracking-widest uppercase block mb-1">
                       {item.label}
                     </span>
                     {item.href ? (
                       <a
                         href={item.href}
-                        className="text-fluid-sm text-site-text-muted hover:text-navy transition-colors whitespace-pre-line"
+                        className="text-fluid-sm text-site-text-muted hover:text-navy transition-colors whitespace-pre-line break-all"
                       >
                         {item.value}
                       </a>
@@ -101,19 +110,21 @@ export default function Contact() {
               {/* Hours */}
               <div className="bg-cream-light/40 rounded-xl p-4 border border-cream/20">
                 <div className="flex items-center gap-3 mb-3">
-                  <span className="text-xl">🕐</span>
+                  <span className="text-xl" aria-hidden="true">🕐</span>
                   <span className="text-xs font-semibold text-navy tracking-widest uppercase">
                     Godziny pracy
                   </span>
-                  <span
-                    className={`ml-auto text-xs font-semibold px-2.5 py-1 rounded-full ${
-                      open
-                        ? "bg-green-100 text-green-700"
-                        : "bg-red-100 text-red-600"
-                    }`}
-                  >
-                    {open ? "Otwarte teraz" : "Zamknięte"}
-                  </span>
+                  {open !== null && (
+                    <span
+                      className={`ml-auto text-xs font-semibold px-2.5 py-1 rounded-full ${
+                        open
+                          ? "bg-green-100 text-green-700"
+                          : "bg-red-100 text-red-600"
+                      }`}
+                    >
+                      {open ? "Otwarte teraz" : "Zamknięte"}
+                    </span>
+                  )}
                 </div>
                 <ul className="flex flex-col gap-1">
                   {HOURS.map(({ day, hours }) => (

@@ -129,7 +129,6 @@ export const metadata: Metadata = {
   },
 };
 
-
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -142,7 +141,7 @@ export default function RootLayout({
     >
       <body className="min-h-full flex flex-col bg-bg text-site-text antialiased">
         {children}
-        <Script id="local-business-schema" type="application/ld+json" strategy="beforeInteractive">
+        <Script id="local-business-schema" type="application/ld+json">
           {JSON.stringify(jsonLd)}
         </Script>
       </body>

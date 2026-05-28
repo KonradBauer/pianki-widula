@@ -29,7 +29,6 @@ html {
 body {
   background: var(--bg);
   color: var(--site-text);
-  font-family: var(--font-jakarta), Arial, sans-serif;
 }
 
 button, [role="button"] {
