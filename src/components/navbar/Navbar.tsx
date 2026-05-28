@@ -58,6 +58,7 @@ export default function Navbar() {
   const handleNavClick = () => setMenuOpen(false);
 
   return (
+    <>
     <header
       className={cn(
         "fixed top-0 py-2 left-0 right-0 z-50 transition-all duration-300",
@@ -135,65 +136,67 @@ export default function Navbar() {
         </button>
       </nav>
 
-      <div
-        id="mobile-menu"
-        ref={overlayRef}
-        role="dialog"
-        aria-modal="true"
-        aria-label="Menu nawigacyjne"
-        className={cn(
-          "md:hidden fixed inset-0 z-40 bg-navy flex flex-col transition-transform duration-300 ease-in-out",
-          menuOpen
-            ? "translate-x-0 pointer-events-auto"
-            : "translate-x-full pointer-events-none"
-        )}
-      >
-        <nav className="flex-1 flex flex-col items-center justify-center gap-1 px-8">
-          {NAV_LINKS.map((link, i) => (
-            <a
-              key={link.href}
-              href={link.href}
-              onClick={handleNavClick}
-              className={cn(
-                "text-white font-playfair text-3xl font-semibold py-3 border-b border-white/10 w-full text-center hover:text-cream",
-                "transition-[color,opacity,transform] duration-300",
-                menuOpen ? cn("opacity-100 translate-y-0", STAGGER_DELAYS[i]) : "opacity-0 translate-y-3 delay-0"
-              )}
-            >
-              {link.label}
-            </a>
-          ))}
+    </header>
+
+    <div
+      id="mobile-menu"
+      ref={overlayRef}
+      role="dialog"
+      aria-modal="true"
+      aria-label="Menu nawigacyjne"
+      className={cn(
+        "md:hidden fixed inset-0 z-40 bg-navy flex flex-col transition-transform duration-300 ease-in-out",
+        menuOpen
+          ? "translate-x-0 pointer-events-auto"
+          : "translate-x-full pointer-events-none"
+      )}
+    >
+      <nav className="flex-1 flex flex-col items-center justify-center gap-1 px-8">
+        {NAV_LINKS.map((link, i) => (
           <a
-            href="#kontakt"
+            key={link.href}
+            href={link.href}
             onClick={handleNavClick}
             className={cn(
-              "mt-6 px-8 py-3.5 rounded-full bg-cream text-navy font-semibold text-lg hover:bg-cream-light cursor-pointer",
-              "transition-[background-color,opacity,transform] duration-300",
-              menuOpen ? "opacity-100 translate-y-0 delay-[330ms]" : "opacity-0 translate-y-3 delay-0"
+              "text-white font-playfair text-3xl font-semibold py-3 border-b border-white/10 w-full text-center hover:text-cream",
+              "transition-[color,opacity,transform] duration-300",
+              menuOpen ? cn("opacity-100 translate-y-0", STAGGER_DELAYS[i]) : "opacity-0 translate-y-3 delay-0"
             )}
           >
-            Zapytaj o ofertę
+            {link.label}
           </a>
-        </nav>
-
-        <div
+        ))}
+        <a
+          href="#kontakt"
+          onClick={handleNavClick}
           className={cn(
-            "pb-10 flex flex-col items-center gap-4 transition-[opacity,transform] duration-300",
-            menuOpen ? "opacity-100 translate-y-0 delay-[380ms]" : "opacity-0 translate-y-3 delay-0"
+            "mt-6 px-8 py-3.5 rounded-full bg-cream text-navy font-semibold text-lg hover:bg-cream-light cursor-pointer",
+            "transition-[background-color,opacity,transform] duration-300",
+            menuOpen ? "opacity-100 translate-y-0 delay-[330ms]" : "opacity-0 translate-y-3 delay-0"
           )}
         >
-          <span className="text-white/30 text-xs tracking-widest uppercase">Znajdź nas</span>
-          <a
-            href="https://www.facebook.com/profile.php?id=100080380672291"
-            target="_blank"
-            rel="noopener noreferrer"
-            aria-label="Facebook"
-            className="w-11 h-11 rounded-full bg-white/10 flex items-center justify-center hover:bg-cream/20 transition-colors"
-          >
-            <FacebookIcon className="w-5 h-5 text-white" />
-          </a>
-        </div>
+          Zapytaj o ofertę
+        </a>
+      </nav>
+
+      <div
+        className={cn(
+          "pb-10 flex flex-col items-center gap-4 transition-[opacity,transform] duration-300",
+          menuOpen ? "opacity-100 translate-y-0 delay-[380ms]" : "opacity-0 translate-y-3 delay-0"
+        )}
+      >
+        <span className="text-white/30 text-xs tracking-widest uppercase">Znajdź nas</span>
+        <a
+          href="https://www.facebook.com/profile.php?id=100080380672291"
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="Facebook"
+          className="w-11 h-11 rounded-full bg-white/10 flex items-center justify-center hover:bg-cream/20 transition-colors"
+        >
+          <FacebookIcon className="w-5 h-5 text-white" />
+        </a>
       </div>
-    </header>
+    </div>
+    </>
   );
 }
