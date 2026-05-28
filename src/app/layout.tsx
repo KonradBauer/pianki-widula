@@ -49,6 +49,48 @@ const jsonLd = {
   taxID: "5741004318",
   description:
     "Sprzedaż pianek tapicerskich do materaców i tapicerki. Wkłady 7-strefowe profilowane CNC, materace do fizjoterapii i domów opieki, wykroje bezpyłowe. Kamyk k. Częstochowy.",
+  hasOfferCatalog: {
+    "@type": "OfferCatalog",
+    name: "Oferta",
+    itemListElement: [
+      {
+        "@type": "Offer",
+        itemOffered: {
+          "@type": "Service",
+          name: "Wkłady i materace do fizjoterapii",
+          description:
+            "Specjalistyczne wkłady i materace piankowe dla szpitali, domów opieki i placówek rehabilitacyjnych. Wykonane z pianek o odpowiednich parametrach twardości i gęstości.",
+          url: `${SITE_URL}/#realizacje`,
+          provider: { "@type": "LocalBusiness", name: "FH Pianki Tapicerskie Jacek Widuła" },
+          areaServed: { "@type": "Country", name: "PL" },
+        },
+      },
+      {
+        "@type": "Offer",
+        itemOffered: {
+          "@type": "Service",
+          name: "Wkłady 7-strefowe profilowane CNC",
+          description:
+            "Wkłady do materaców z 7 strefami twardości, precyzyjnie profilowane na maszynach CNC. Ergonomiczne wsparcie każdej partii ciała, dowolne wymiary.",
+          url: `${SITE_URL}/#realizacje`,
+          provider: { "@type": "LocalBusiness", name: "FH Pianki Tapicerskie Jacek Widuła" },
+          areaServed: { "@type": "Country", name: "PL" },
+        },
+      },
+      {
+        "@type": "Offer",
+        itemOffered: {
+          "@type": "Service",
+          name: "Wykroje bezpyłowe CNC",
+          description:
+            "Wykroje piankowe metodą bezpyłową na maszynach CNC. Precyzyjne kontury i czyste krawędzie — dowolne kształty i wymiary według dostarczonej formatki.",
+          url: `${SITE_URL}/#realizacje`,
+          provider: { "@type": "LocalBusiness", name: "FH Pianki Tapicerskie Jacek Widuła" },
+          areaServed: { "@type": "Country", name: "PL" },
+        },
+      },
+    ],
+  },
 };
 
 export const metadata: Metadata = {
