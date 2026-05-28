@@ -111,7 +111,7 @@ export default function ProductCarousel({ images, title }: ProductCarouselProps)
               i === index ? "border-navy" : "border-transparent opacity-60 hover:opacity-100"
             }`}
           >
-            <Image src={src} alt="" fill sizes="56px" className="object-cover" />
+            <Image src={src} alt={`${title} - miniatura ${i + 1}`} fill sizes="56px" className="object-cover" />
           </button>
         ))}
       </div>

@@ -4,7 +4,7 @@ import type { Metadata } from "next";
 export const metadata: Metadata = {
   title: "Polityka Prywatności | Pianki Widuła",
   description: "Polityka prywatności serwisu pianki-widula.pl",
-  robots: { index: false },
+  robots: { index: true, follow: true },
 };
 
 export default function PolitykaPrywatnosci() {
