@@ -59,144 +59,148 @@ export default function Navbar() {
 
   return (
     <>
-    <header
-      className={cn(
-        "fixed top-0 py-2 left-0 right-0 z-50 transition-all duration-300",
-        scrolled
-          ? "bg-white/90 backdrop-blur-md shadow-sm border-b border-cream/30"
-          : "bg-gradient-to-b from-black/40 to-transparent"
-      )}
-    >
-      <nav className="section-px max-w-7xl mx-auto flex items-center justify-between py-2">
-        <Link
-          href="#hero"
-          className="relative z-50 flex items-center group"
-          onClick={handleNavClick}
-        >
-          <Image
-            src="/favicon.png"
-            alt="Pianki Tapicerskie Widuła"
-            width={40}
-            height={40}
-            className="md:hidden object-contain rounded-lg"
-          />
-          <div
-            className={cn(
-              "hidden md:block rounded-xl px-3 py-1.5 transition-all duration-300",
-              !scrolled && "bg-white shadow-sm"
-            )}
-          >
-            <Image
-              src="/logo-v3.png"
-              alt="Pianki Tapicerskie Widuła"
-              width={110}
-              height={96}
-              className="object-contain"
-            />
-          </div>
-        </Link>
-
-        <ul className="hidden md:flex items-center gap-8">
-          {NAV_LINKS.map((link) => (
-            <li key={link.href}>
-              <a
-                href={link.href}
-                className={cn(
-                  "text-fluid-sm font-medium transition-colors hover:text-cream relative",
-                  "after:absolute after:bottom-0 after:left-0 after:w-0 after:h-px after:bg-cream after:transition-all hover:after:w-full",
-                  scrolled ? "text-navy" : "text-white"
-                )}
-              >
-                {link.label}
-              </a>
-            </li>
-          ))}
-        </ul>
-
-        <a
-          href="#kontakt"
-          className="hidden md:inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-cream text-navy text-fluid-sm font-semibold hover:bg-cream-light transition-colors"
-        >
-          Zapytaj o ofertę
-        </a>
-
-        <button
-          className={cn(
-            "md:hidden flex flex-col gap-1.5 p-2 z-50 relative cursor-pointer",
-            menuOpen ? "text-white" : scrolled ? "text-navy" : "text-white"
-          )}
-          onClick={() => setMenuOpen((v) => !v)}
-          aria-label="Menu"
-          aria-expanded={menuOpen}
-          aria-controls="mobile-menu"
-        >
-          <span className={cn("block w-6 h-0.5 bg-current transition-all duration-300", menuOpen && "rotate-45 translate-y-2")} />
-          <span className={cn("block w-6 h-0.5 bg-current transition-all duration-300", menuOpen && "opacity-0")} />
-          <span className={cn("block w-6 h-0.5 bg-current transition-all duration-300", menuOpen && "-rotate-45 -translate-y-2")} />
-        </button>
-      </nav>
-
-    </header>
-
-    <div
-      id="mobile-menu"
-      ref={overlayRef}
-      role="dialog"
-      aria-modal="true"
-      aria-label="Menu nawigacyjne"
-      className={cn(
-        "md:hidden fixed inset-0 z-40 bg-navy flex flex-col transition-transform duration-300 ease-in-out",
-        menuOpen
-          ? "translate-x-0 pointer-events-auto"
-          : "translate-x-full pointer-events-none"
-      )}
-    >
-      <nav className="flex-1 flex flex-col items-center justify-center gap-1 px-8">
-        {NAV_LINKS.map((link, i) => (
-          <a
-            key={link.href}
-            href={link.href}
-            onClick={handleNavClick}
-            className={cn(
-              "text-white font-playfair text-3xl font-semibold py-3 border-b border-white/10 w-full text-center hover:text-cream",
-              "transition-[color,opacity,transform] duration-300",
-              menuOpen ? cn("opacity-100 translate-y-0", STAGGER_DELAYS[i]) : "opacity-0 translate-y-3 delay-0"
-            )}
-          >
-            {link.label}
-          </a>
-        ))}
-        <a
-          href="#kontakt"
-          onClick={handleNavClick}
-          className={cn(
-            "mt-6 px-8 py-3.5 rounded-full bg-cream text-navy font-semibold text-lg hover:bg-cream-light cursor-pointer",
-            "transition-[background-color,opacity,transform] duration-300",
-            menuOpen ? "opacity-100 translate-y-0 delay-[330ms]" : "opacity-0 translate-y-3 delay-0"
-          )}
-        >
-          Zapytaj o ofertę
-        </a>
-      </nav>
-
-      <div
+      <header
         className={cn(
-          "pb-10 flex flex-col items-center gap-4 transition-[opacity,transform] duration-300",
-          menuOpen ? "opacity-100 translate-y-0 delay-[380ms]" : "opacity-0 translate-y-3 delay-0"
+          "fixed top-0 py-2 left-0 right-0 z-50 transition-all duration-300",
+          scrolled
+            ? "bg-white/90 backdrop-blur-md shadow-sm border-b border-cream/30"
+            : "bg-gradient-to-b from-black/40 to-transparent"
         )}
       >
-        <span className="text-white/30 text-xs tracking-widest uppercase">Znajdź nas</span>
-        <a
-          href="https://www.facebook.com/profile.php?id=100080380672291"
-          target="_blank"
-          rel="noopener noreferrer"
-          aria-label="Facebook"
-          className="w-11 h-11 rounded-full bg-white/10 flex items-center justify-center hover:bg-cream/20 transition-colors"
+        <nav className="section-px max-w-7xl mx-auto flex items-center justify-between py-2">
+          <Link
+            href="#hero"
+            className="relative z-50 flex items-center group"
+            onClick={handleNavClick}
+          >
+            <Image
+              src="/favicon.png"
+              alt="Pianki Tapicerskie Widuła"
+              width={40}
+              height={40}
+              className="md:hidden object-contain rounded-lg"
+            />
+            <div
+              className={cn(
+                "hidden md:block rounded-xl px-3 py-1.5 transition-all duration-300",
+                !scrolled && "bg-white shadow-sm"
+              )}
+            >
+              <Image
+                src="/logo-v3.png"
+                alt="Pianki Tapicerskie Widuła"
+                width={110}
+                height={96}
+                className="object-contain"
+              />
+            </div>
+          </Link>
+
+          <ul className="hidden md:flex items-center gap-8">
+            {NAV_LINKS.map((link) => (
+              <li key={link.href}>
+                <a
+                  href={link.href}
+                  className={cn(
+                    "text-fluid-sm font-medium transition-colors hover:text-cream relative",
+                    "after:absolute after:bottom-0 after:left-0 after:w-0 after:h-px after:bg-cream after:transition-all hover:after:w-full",
+                    scrolled ? "text-navy" : "text-white"
+                  )}
+                >
+                  {link.label}
+                </a>
+              </li>
+            ))}
+          </ul>
+
+          <a
+            href="#kontakt"
+            className="hidden md:inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-cream text-navy text-fluid-sm font-semibold hover:bg-cream-light transition-colors"
+          >
+            Zapytaj o ofertę
+          </a>
+
+          {/* placeholder — zachowuje szerokość hamburger na desktopie */}
+          <div className="md:hidden w-10 h-10" aria-hidden="true" />
+        </nav>
+      </header>
+
+      {/* Hamburger — fixed poza headerem, zawsze na wierzchu */}
+      <button
+        className={cn(
+          "md:hidden fixed top-[18px] right-[clamp(1.25rem,5vw,6rem)] z-[60] flex flex-col gap-1.5 p-2 cursor-pointer",
+          menuOpen ? "text-white" : scrolled ? "text-navy" : "text-white"
+        )}
+        onClick={() => setMenuOpen((v) => !v)}
+        aria-label={menuOpen ? "Zamknij menu" : "Otwórz menu"}
+        aria-expanded={menuOpen}
+        aria-controls="mobile-menu"
+      >
+        <span className={cn("block w-6 h-0.5 bg-current transition-all duration-300", menuOpen && "rotate-45 translate-y-2")} />
+        <span className={cn("block w-6 h-0.5 bg-current transition-all duration-300", menuOpen && "opacity-0")} />
+        <span className={cn("block w-6 h-0.5 bg-current transition-all duration-300", menuOpen && "-rotate-45 -translate-y-2")} />
+      </button>
+
+      {/* Overlay — ponad headerem */}
+      <div
+        id="mobile-menu"
+        ref={overlayRef}
+        role="dialog"
+        aria-modal="true"
+        aria-label="Menu nawigacyjne"
+        className={cn(
+          "md:hidden fixed inset-0 z-[55] bg-navy flex flex-col transition-transform duration-300 ease-in-out",
+          menuOpen
+            ? "translate-x-0 pointer-events-auto"
+            : "translate-x-full pointer-events-none"
+        )}
+      >
+        <nav className="flex-1 flex flex-col items-center justify-center gap-1 px-8">
+          {NAV_LINKS.map((link, i) => (
+            <a
+              key={link.href}
+              href={link.href}
+              onClick={handleNavClick}
+              className={cn(
+                "text-white font-playfair text-3xl font-semibold py-3 border-b border-white/10 w-full text-center hover:text-cream",
+                "transition-[color,opacity,transform] duration-300",
+                menuOpen ? cn("opacity-100 translate-y-0", STAGGER_DELAYS[i]) : "opacity-0 translate-y-3 delay-0"
+              )}
+            >
+              {link.label}
+            </a>
+          ))}
+          <a
+            href="#kontakt"
+            onClick={handleNavClick}
+            className={cn(
+              "mt-6 px-8 py-3.5 rounded-full bg-cream text-navy font-semibold text-lg hover:bg-cream-light cursor-pointer",
+              "transition-[background-color,opacity,transform] duration-300",
+              menuOpen ? "opacity-100 translate-y-0 delay-[330ms]" : "opacity-0 translate-y-3 delay-0"
+            )}
+          >
+            Zapytaj o ofertę
+          </a>
+        </nav>
+
+        <div
+          className={cn(
+            "pb-10 flex flex-col items-center gap-4 transition-[opacity,transform] duration-300",
+            menuOpen ? "opacity-100 translate-y-0 delay-[380ms]" : "opacity-0 translate-y-3 delay-0"
+          )}
         >
-          <FacebookIcon className="w-5 h-5 text-white" />
-        </a>
+          <span className="text-white/30 text-xs tracking-widest uppercase">Znajdź nas</span>
+          <a
+            href="https://www.facebook.com/profile.php?id=100080380672291"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Facebook"
+            className="w-11 h-11 rounded-full bg-white/10 flex items-center justify-center hover:bg-cream/20 transition-colors"
+          >
+            <FacebookIcon className="w-5 h-5 text-white" />
+          </a>
+        </div>
       </div>
-    </div>
     </>
   );
 }
