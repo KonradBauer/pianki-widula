@@ -142,10 +142,10 @@ export default function Navbar() {
         aria-modal="true"
         aria-label="Menu nawigacyjne"
         className={cn(
-          "md:hidden fixed inset-0 z-40 bg-navy flex flex-col transition-[transform,opacity] duration-300 ease-in-out",
+          "md:hidden fixed inset-0 z-40 bg-navy flex flex-col transition-transform duration-300 ease-in-out",
           menuOpen
-            ? "translate-x-0 opacity-100 pointer-events-auto"
-            : "translate-x-full opacity-0 pointer-events-none"
+            ? "translate-x-0 pointer-events-auto"
+            : "translate-x-full pointer-events-none"
         )}
       >
         <nav className="flex-1 flex flex-col items-center justify-center gap-1 px-8">
