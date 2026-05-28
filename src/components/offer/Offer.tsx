@@ -3,52 +3,28 @@ import OfferCard from "./OfferCard";
 
 const PRODUCTS = [
   {
-    name: "Pianka HR",
-    subtitle: "High Resilience",
+    name: "Wkłady do fizjoterapii",
+    subtitle: "Szpitale · Domy opieki · Rehabilitacja",
     description:
-      "Pianka wysokoelastyczna stosowana w wkładach 7-strefowych i materacach rehabilitacyjnych. Precyzyjnie profilowana na maszynach CNC - zapewnia optymalne wsparcie każdej strefy ciała.",
-    properties: ["Wkłady 7-strefowe", "Materace rehab.", "Profilowanie CNC", "Wysoka trwałość"],
+      "Specjalistyczne wkłady i materace piankowe do placówek medycznych, szpitali i domów opieki. Wykonane z pianek o odpowiednich parametrach twardości i gęstości - komfort i wsparcie pacjentów.",
+    properties: ["Szpitale", "Domy opieki", "Rehabilitacja", "Na zamówienie"],
+    icon: "🏥",
+  },
+  {
+    name: "Wkłady 7-strefowe",
+    subtitle: "Ergonomia · Wsparcie kręgosłupa · CNC",
+    description:
+      "Wkłady do materacy z 7 strefami twardości, precyzyjnie profilowane na maszynach CNC. Każda strefa dostosowana do innej partii ciała - optymalny komfort i wsparcie podczas snu.",
+    properties: ["7 stref twardości", "Profilowanie CNC", "Dowolne wymiary", "Ergonomiczne"],
     icon: "🛏️",
   },
   {
-    name: "Pianka T",
-    subtitle: "T-25 / T-30",
+    name: "Wykroje bezpyłowe",
+    subtitle: "Precyzja CNC · Dowolne kształty · Czyste krawędzie",
     description:
-      "Podstawowy materiał do wykrojów bezpyłowych i wkładów do materacy. Cięcie konturowe, pionowe i poziome na maszynach CNC - realizujemy dowolne kształty i wymiary.",
-    properties: ["Wykroje bezpyłowe", "Cięcie CNC", "T-25 / T-30", "Dowolne wymiary"],
+      "Wykroje piankowe wykonywane metodą bezpyłową na maszynach CNC. Precyzyjne kontury i czyste krawędzie - realizujemy dowolne kształty i wymiary według dostarczonej formatki.",
+    properties: ["Cięcie bezpyłowe", "Maszyny CNC", "Dowolne kształty", "Czyste krawędzie"],
     icon: "✂️",
-  },
-  {
-    name: "Pianka Visco",
-    subtitle: "Memory Foam",
-    description:
-      "Pianka termoelastyczna do wkładów 7-strefowych dla placówek medycznych i domów opieki. Redukuje punkty nacisku - szczególnie zalecana w profilaktyce odleżyn.",
-    properties: ["Domy opieki", "Profilaktyka odleżyn", "7-strefowe", "Antyalergiczna"],
-    icon: "🌙",
-  },
-  {
-    name: "Pianka PUR",
-    subtitle: "Poliuretanowa",
-    description:
-      "Wszechstronny materiał do wykrojów i wkładów na zamówienie. Cięcie bezpyłowe na maszynach CNC pozwala uzyskać precyzyjne kształty zgodnie z dostarczoną formatką.",
-    properties: ["Wykroje na zamówienie", "Cięcie bezpyłowe", "Różne gęstości", "Przemysłowa"],
-    icon: "⚙️",
-  },
-  {
-    name: "Lateks",
-    subtitle: "Naturalny",
-    description:
-      "Pianka lateksowa do wkładów materacowych najwyższej klasy. Stosowana w materacach dla szpitali i domów opieki - naturalna, odporna na grzyby i roztocza.",
-    properties: ["Szpitale", "Antyalergiczna", "Antygrzybicza", "Naturalna"],
-    icon: "🌿",
-  },
-  {
-    name: "Mata kokosowa",
-    subtitle: "Włókno kokosowe",
-    description:
-      "Twarda warstwa bazowa do materacy i wkładów 7-strefowych. Zapewnia stabilne podparcie i wentylację - stosowana jako pierwsza strefa od podstawy materaca.",
-    properties: ["Warstwa bazowa", "7-strefowe", "Przewiewna", "Naturalna"],
-    icon: "🥥",
   },
 ];
 
