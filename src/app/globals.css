@@ -18,7 +18,7 @@
   --color-bg: var(--bg);
   --color-site-text: var(--site-text);
   --color-site-text-muted: var(--site-text-muted);
-  --font-sans: var(--font-geist-sans);
+  --font-sans: var(--font-jakarta);
   --font-playfair: var(--font-playfair-display), Georgia, serif;
 }
 
@@ -29,7 +29,7 @@ html {
 body {
   background: var(--bg);
   color: var(--site-text);
-  font-family: var(--font-geist-sans), Arial, sans-serif;
+  font-family: var(--font-jakarta), Arial, sans-serif;
 }
 
 button, [role="button"] {

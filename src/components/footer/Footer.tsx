@@ -94,6 +94,17 @@ export default function Footer() {
 
         <div className="pt-6 flex flex-col sm:flex-row items-center justify-between gap-4 text-white/30 text-fluid-sm">
           <span>© {new Date().getFullYear()} Pianki Tapicerskie Jacek Widuła</span>
+          <span>
+            Wykonanie:{" "}
+            <a
+              href="https://studiocodeart.pl"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hover:text-cream transition-colors"
+            >
+              studiocodeart.pl
+            </a>
+          </span>
           <Link
             href="/polityka-prywatnosci"
             className="hover:text-cream transition-colors"

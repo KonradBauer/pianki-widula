@@ -23,13 +23,9 @@ const CONTACT_INFO = [
 ];
 
 const HOURS = [
-  { day: "Poniedziałek", hours: "08:00 – 16:00" },
-  { day: "Wtorek",       hours: "08:00 – 16:00" },
-  { day: "Środa",        hours: "08:00 – 16:00" },
-  { day: "Czwartek",     hours: "08:00 – 16:00" },
-  { day: "Piątek",       hours: "08:00 – 16:00" },
-  { day: "Sobota",       hours: "08:00 – 13:00" },
-  { day: "Niedziela",    hours: null },
+  { day: "Poniedziałek – Piątek", hours: "08:00 – 16:00" },
+  { day: "Sobota",                hours: "08:00 – 13:00" },
+  { day: "Niedziela",             hours: null },
 ];
 
 function isOpenNow(): boolean {
