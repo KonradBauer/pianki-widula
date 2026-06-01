@@ -13,10 +13,10 @@ export default function Footer() {
             <div className="mb-4">
               <div className="bg-white rounded-xl px-3 py-2 inline-block">
                 <Image
-                  src="/logo-v3.png"
+                  src="/logo-newv2.png"
                   alt="Pianki Tapicerskie Widuła"
-                  width={110}
-                  height={96}
+                  width={220}
+                  height={192}
                   className="object-contain"
                 />
               </div>

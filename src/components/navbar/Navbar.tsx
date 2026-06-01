@@ -74,7 +74,7 @@ export default function Navbar() {
             onClick={handleNavClick}
           >
             <Image
-              src="/favicon.png"
+              src="/logo-newv2.png"
               alt="Pianki Tapicerskie Widuła"
               width={40}
               height={40}
@@ -87,10 +87,10 @@ export default function Navbar() {
               )}
             >
               <Image
-                src="/logo-v3.png"
+                src="/logo-newv2.png"
                 alt="Pianki Tapicerskie Widuła"
-                width={110}
-                height={96}
+                width={220}
+                height={192}
                 className="object-contain"
               />
             </div>

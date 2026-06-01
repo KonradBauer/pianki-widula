@@ -97,7 +97,7 @@ const jsonLd = {
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
-  icons: { icon: "/favicon.png" },
+  icons: { icon: "/logo-newv2.png" },
   title: "Pianki Tapicerskie Widuła | Kamyk k. Częstochowy",
   description:
     "Firma Handlowa Pianki Tapicerskie Jacek Widuła - sprzedaż pianek do materaców i tapicerki. Wkłady 7-strefowe, materace do fizjoterapii, wykroje bezpyłowe. Cięcie na wymiar. Kamyk k. Częstochowy.",
