@@ -11,16 +11,16 @@ export default function Hero() {
       <div
         className="absolute inset-0 opacity-10"
         style={{
-          backgroundImage: `radial-gradient(circle at 20% 50%, #E8C99A 0%, transparent 50%),
-                            radial-gradient(circle at 80% 20%, #2E4070 0%, transparent 50%)`,
+          backgroundImage: `radial-gradient(circle at 20% 50%, #4D9028 0%, transparent 50%),
+                            radial-gradient(circle at 80% 20%, #3D7A1F 0%, transparent 50%)`,
         }}
       />
 
       {/* Geometric decoration */}
       <div className="absolute top-0 right-0 w-1/2 h-full opacity-5 pointer-events-none">
         <svg viewBox="0 0 600 800" fill="none" className="w-full h-full">
-          <rect x="100" y="50" width="400" height="400" stroke="#E8C99A" strokeWidth="1" transform="rotate(15 300 250)" />
-          <rect x="150" y="100" width="300" height="300" stroke="#E8C99A" strokeWidth="0.5" transform="rotate(30 300 250)" />
+          <rect x="100" y="50" width="400" height="400" stroke="#4D9028" strokeWidth="1" transform="rotate(15 300 250)" />
+          <rect x="150" y="100" width="300" height="300" stroke="#4D9028" strokeWidth="0.5" transform="rotate(30 300 250)" />
         </svg>
       </div>
 
