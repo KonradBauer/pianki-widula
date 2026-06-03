@@ -71,14 +71,14 @@ export default function Applications() {
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
           {APPLICATIONS.map((app, i) => (
             <AnimatedSection key={app.title} delay={i * 0.06}>
-              <div className="bg-white rounded-2xl overflow-hidden border border-cream/20 shadow-sm card-lift h-full">
-                <div className="relative aspect-[4/3] w-full">
+              <div className="bg-white rounded-2xl overflow-hidden border border-cream/20 shadow-sm h-full group">
+                <div className="relative aspect-[4/3] w-full overflow-hidden">
                   <Image
                     src={app.image}
                     alt={`Branża ${app.title.toLowerCase()}  - pianki tapicerskie`}
                     fill
                     sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
-                    className="object-cover"
+                    className="object-cover transition-transform duration-500 group-hover:scale-110"
                   />
                 </div>
                 <div className="p-5">

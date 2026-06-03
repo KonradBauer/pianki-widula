@@ -73,18 +73,17 @@ export default function Navbar() {
             className="relative z-50 flex items-center group"
             onClick={handleNavClick}
           >
-            <Image
-              src="/logo.png"
-              alt="Pianki Tapicerskie Widuła"
-              width={40}
-              height={40}
-              className="md:hidden object-contain rounded-lg"
-            />
+            <div className="md:hidden bg-white rounded-lg px-2 py-1 shadow-sm">
+              <Image
+                src="/logo.png"
+                alt="Pianki Tapicerskie Widuła"
+                width={160}
+                height={55}
+                className="object-contain h-10 w-auto"
+              />
+            </div>
             <div
-              className={cn(
-                "hidden md:block rounded-xl px-3 py-1.5 transition-all duration-300",
-                !scrolled && "bg-white shadow-sm"
-              )}
+              className="hidden md:block rounded-xl px-3 py-1.5 transition-all duration-300 bg-white shadow-sm"
             >
               <Image
                 src="/logo.png"

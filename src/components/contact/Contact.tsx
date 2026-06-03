@@ -17,12 +17,6 @@ const CONTACT_INFO = [
     value: "+48 502 490 104",
     href: "tel:+48502490104",
   },
-  {
-    icon: "✉️",
-    label: "Email",
-    value: "piankapianka@vp.pl",
-    href: "mailto:piankapianka@vp.pl",
-  },
 ];
 
 const HOURS = [
@@ -81,7 +75,7 @@ export default function Contact() {
           <AnimatedSection direction="right" delay={0.15}>
             <div className="flex flex-col gap-6 h-full">
               {/* Info boxes */}
-              <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 {CONTACT_INFO.map((item) => (
                   <div
                     key={item.label}

@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
 import { Plus_Jakarta_Sans, Playfair_Display } from "next/font/google";
-import Script from "next/script";
 import "./globals.css";
 
 const jakarta = Plus_Jakarta_Sans({
@@ -97,10 +96,10 @@ const jsonLd = {
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
-  icons: { icon: "/logo.png" },
-  title: "Przetwórnia Pianki Tapicerskiej Widuła | Kształtki i Formatki CNC | Kamyk k. Częstochowy",
+  icons: { icon: "/favicon.svg", shortcut: "/favicon.svg" },
+  title: "Przetwórnia Pianek Widuła | Kształtki i Formatki CNC | Częstochowa",
   description:
-    "Przetwórnia pianek tapicerskich Widuła  - bezpyłowe wycinanie kształtek, formatek i wkładów materacowych na maszynach CNC. Pianki HR, Visco, Typ T, RE. Cięcie konturowe. B2B. Kamyk k. Częstochowy.",
+    "Przetwórnia pianek tapicerskich Widuła - kształtki i formatki CNC, wkłady 7-strefowe, wykroje bezpyłowe. Pianki HR, Visco, Typ T. B2B. Kamyk k. Częstochowy.",
   keywords: [
     "przetwórnia pianek tapicerskich",
     "formatki piankowe",
@@ -119,7 +118,7 @@ export const metadata: Metadata = {
     canonical: "/",
   },
   openGraph: {
-    title: "Przetwórnia Pianki Widuła  - Kształtki i Formatki CNC",
+    title: "Przetwórnia Pianek Widuła - Kształtki i Formatki CNC",
     description:
       "Bezpyłowe wycinanie kształtek i formatek piankowych na maszynach CNC. Pianki HR, Visco, Typ T, RE. B2B. Kamyk k. Częstochowy.",
     type: "website",
@@ -128,7 +127,7 @@ export const metadata: Metadata = {
     siteName: "Pianki Tapicerskie Widuła",
     images: [
       {
-        url: "/assets/og_image.png",
+        url: "/og",
         width: 1200,
         height: 630,
         alt: "Pianki Tapicerskie Widuła  - Kamyk k. Częstochowy",
@@ -137,9 +136,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Przetwórnia Pianki Widuła  - Kształtki CNC",
-    description: "Bezpyłowe wycinanie kształtek piankowych CNC. B2B. Kamyk k. Częstochowy.",
-    images: ["/assets/og_image.png"],
+    title: "Przetwórnia Pianek Widuła - Kształtki CNC",
+    description: "Bezpyłowe wycinanie kształtek piankowych CNC. Pianki HR, Visco, Typ T. B2B. Kamyk k. Częstochowy.",
+    images: ["/og"],
   },
 };
 
@@ -153,11 +152,17 @@ export default function RootLayout({
       lang="pl"
       className={`${jakarta.variable} ${playfair.variable} scroll-smooth`}
     >
+      <head>
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+        {/* JSON-LD: safe — jsonLd is a hardcoded static object, JSON.stringify escapes all output */}
+        <script type="application/ld+json" suppressHydrationWarning
+          // eslint-disable-next-line react/no-danger
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        />
+      </head>
       <body className="min-h-full flex flex-col bg-bg text-site-text antialiased">
         {children}
-        <Script id="local-business-schema" type="application/ld+json">
-          {JSON.stringify(jsonLd)}
-        </Script>
       </body>
     </html>
   );
