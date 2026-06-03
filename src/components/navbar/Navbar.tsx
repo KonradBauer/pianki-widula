@@ -74,7 +74,7 @@ export default function Navbar() {
             onClick={handleNavClick}
           >
             <Image
-              src="/logo-newv2.png"
+              src="/logo.png"
               alt="Pianki Tapicerskie Widuła"
               width={40}
               height={40}
@@ -87,7 +87,7 @@ export default function Navbar() {
               )}
             >
               <Image
-                src="/logo-newv2.png"
+                src="/logo.png"
                 alt="Pianki Tapicerskie Widuła"
                 width={220}
                 height={192}
@@ -115,7 +115,7 @@ export default function Navbar() {
 
           <a
             href="#kontakt"
-            className="hidden md:inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-cream text-navy text-fluid-sm font-semibold hover:bg-cream-light transition-colors"
+            className="hidden md:inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-navy text-white text-fluid-sm font-semibold hover:bg-navy-light transition-all"
           >
             Zapytaj o ofertę
           </a>
@@ -174,8 +174,8 @@ export default function Navbar() {
             href="#kontakt"
             onClick={handleNavClick}
             className={cn(
-              "mt-6 px-8 py-3.5 rounded-full bg-cream text-navy font-semibold text-lg hover:bg-cream-light cursor-pointer",
-              "transition-[background-color,opacity,transform] duration-300",
+              "mt-6 px-8 py-3.5 rounded-full bg-navy text-white font-semibold text-lg hover:bg-navy-light cursor-pointer",
+              "transition-all duration-300",
               menuOpen ? "opacity-100 translate-y-0 delay-[330ms]" : "opacity-0 translate-y-3 delay-0"
             )}
           >

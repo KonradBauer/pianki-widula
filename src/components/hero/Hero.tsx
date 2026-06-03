@@ -29,23 +29,23 @@ export default function Hero() {
           className="animate-in-fade inline-block px-4 py-1.5 rounded-full border border-cream/40 text-cream text-fluid-sm font-medium mb-6 tracking-wide uppercase"
           style={{ animationDelay: "0s" }}
         >
-          Od lat w branży tapicerskiej
+          Przetwórnia pianek tapicerskich
         </span>
 
         <h1
           className="animate-in-up text-fluid-hero font-playfair text-white mb-6 leading-tight"
           style={{ animationDelay: "0.12s" }}
         >
-          Pianki tapicerskie{" "}
-          <span className="text-cream italic">najwyższej jakości</span>
+          Kształtki i formatki{" "}
+          <span className="text-cream italic">cięte CNC</span>
         </h1>
 
         <p
           className="animate-in-up text-fluid-body text-white/70 max-w-2xl mx-auto mb-10"
           style={{ animationDelay: "0.26s" }}
         >
-          Sprzedaż pianek do materaców i tapicerki - HR, Visco, PUR, lateks, kokos.
-          Cięcie na wymiar. Obsługujemy klientów indywidualnych i firmy.
+          Bezpyłowe wycinanie kształtek, formatek i wkładów materacowych na maszynach
+          CNC. Pianki HR, Visco, Typ&nbsp;T, RE. Cięcie konturowe na wymiar. Obsługa B2B.
         </p>
 
         <div

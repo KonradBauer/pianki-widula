@@ -13,7 +13,7 @@ export default function Footer() {
             <div className="mb-4">
               <div className="bg-white rounded-xl px-3 py-2 inline-block">
                 <Image
-                  src="/logo-newv2.png"
+                  src="/logo.png"
                   alt="Pianki Tapicerskie Widuła"
                   width={220}
                   height={192}

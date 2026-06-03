@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useRef, useState, CSSProperties } from "react";
+import Image from "next/image";
 
 interface OfferCardProps {
   name: string;
@@ -8,6 +9,7 @@ interface OfferCardProps {
   description: string;
   properties: string[];
   icon: string;
+  image: string;
   index: number;
 }
 
@@ -17,6 +19,7 @@ export default function OfferCard({
   description,
   properties,
   icon,
+  image,
   index,
 }: OfferCardProps) {
   const ref = useRef<HTMLDivElement>(null);
@@ -48,31 +51,39 @@ export default function OfferCard({
   return (
     <div
       ref={ref}
-      className={`${visible ? "animate-in-up" : ""} bg-white rounded-2xl p-6 border border-cream/20 shadow-sm card-lift group cursor-default`}
+      className={`${visible ? "animate-in-up" : ""} bg-white rounded-2xl overflow-hidden border border-cream/20 shadow-sm card-lift group cursor-default`}
       style={style}
     >
-      <div className="flex items-start gap-4 mb-4">
-        <div className="w-12 h-12 rounded-xl bg-cream-light flex items-center justify-center text-2xl shrink-0 group-hover:bg-cream transition-colors">
+      <div className="relative aspect-[16/9] w-full">
+        <Image
+          src={image}
+          alt={name}
+          fill
+          sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+          className="object-cover transition-transform duration-500 group-hover:scale-105"
+        />
+        <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent" />
+        <div className="absolute bottom-3 left-4 w-10 h-10 rounded-xl bg-white/90 flex items-center justify-center text-xl">
           {icon}
         </div>
-        <div>
-          <h3 className="text-fluid-h3 font-playfair text-navy font-semibold leading-tight">
-            {name}
-          </h3>
-          <span className="text-fluid-sm text-cream font-medium">{subtitle}</span>
-        </div>
       </div>
-      <p className="text-fluid-sm text-site-text-muted mb-4">{description}</p>
-      <ul className="flex flex-wrap gap-2">
-        {properties.map((prop) => (
-          <li
-            key={prop}
-            className="px-3 py-1 rounded-full bg-cream-light/60 text-navy text-xs font-medium border border-cream/30"
-          >
-            {prop}
-          </li>
-        ))}
-      </ul>
+      <div className="p-6">
+        <h3 className="text-fluid-h3 font-playfair text-navy font-semibold leading-tight mb-1">
+          {name}
+        </h3>
+        <span className="text-fluid-sm text-cream font-medium block mb-3">{subtitle}</span>
+        <p className="text-fluid-sm text-site-text-muted mb-4">{description}</p>
+        <ul className="flex flex-wrap gap-2">
+          {properties.map((prop) => (
+            <li
+              key={prop}
+              className="px-3 py-1 rounded-full bg-cream-light/60 text-navy text-xs font-medium border border-cream/30"
+            >
+              {prop}
+            </li>
+          ))}
+        </ul>
+      </div>
     </div>
   );
 }

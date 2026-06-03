@@ -1,6 +1,7 @@
 "use client";
 
-import { useEffect, useCallback, useState } from "react";
+import { useEffect, useCallback, useState, useRef } from "react";
+import { createPortal } from "react-dom";
 import Image from "next/image";
 
 interface LightboxProps {
@@ -10,58 +11,90 @@ interface LightboxProps {
   onClose: () => void;
 }
 
+const ANIM_MS = 280;
+
 export default function Lightbox({ images, initialIndex, alt, onClose }: LightboxProps) {
-  const [index, setIndex] = useState(initialIndex);
+  const [curr, setCurr] = useState(initialIndex);
+  const [prev, setPrev] = useState<number | null>(null);
+  const [dir, setDir] = useState<"next" | "prev">("next");
   const [zoomed, setZoomed] = useState(false);
+  const timerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
 
-  const prev = useCallback(() => {
+  const navigate = useCallback((newIndex: number, direction: "next" | "prev") => {
+    if (timerRef.current) clearTimeout(timerRef.current);
     setZoomed(false);
-    setIndex((i) => (i - 1 + images.length) % images.length);
-  }, [images.length]);
+    setDir(direction);
+    setPrev(curr);
+    setCurr(newIndex);
+    timerRef.current = setTimeout(() => setPrev(null), ANIM_MS);
+  }, [curr]);
 
-  const next = useCallback(() => {
-    setZoomed(false);
-    setIndex((i) => (i + 1) % images.length);
-  }, [images.length]);
+  const prev_ = useCallback(() => {
+    navigate((curr - 1 + images.length) % images.length, "prev");
+  }, [curr, images.length, navigate]);
+
+  const next_ = useCallback(() => {
+    navigate((curr + 1) % images.length, "next");
+  }, [curr, images.length, navigate]);
 
   useEffect(() => {
     const onKey = (e: KeyboardEvent) => {
       if (e.key === "Escape") onClose();
-      if (e.key === "ArrowLeft") prev();
-      if (e.key === "ArrowRight") next();
+      if (e.key === "ArrowLeft") prev_();
+      if (e.key === "ArrowRight") next_();
     };
     document.addEventListener("keydown", onKey);
     document.body.style.overflow = "hidden";
     return () => {
       document.removeEventListener("keydown", onKey);
       document.body.style.overflow = "";
+      if (timerRef.current) clearTimeout(timerRef.current);
     };
-  }, [onClose, prev, next]);
+  }, [onClose, prev_, next_]);
 
-  return (
+  const animStyle = (role: "in" | "out") => ({
+    animation: `lb${role === "in" ? "In" : "Out"}${dir === "next" ? "Next" : "Prev"} ${ANIM_MS}ms cubic-bezier(0.25,0.46,0.45,0.94) both`,
+  });
+
+  const content = (
     <div
-      className="fixed inset-0 z-[100] bg-black/90 flex items-center justify-center"
+      className="fixed inset-0 z-[100] bg-black/80 backdrop-blur-md flex items-center justify-center"
       onClick={onClose}
     >
-      {/* Image container */}
       <div
-        className="relative w-full h-full flex items-center justify-center"
+        className="relative w-full h-full flex items-center justify-center overflow-hidden"
         onClick={(e) => e.stopPropagation()}
       >
+        {/* Outgoing image */}
+        {prev !== null && (
+          <div
+            key={`out-${prev}`}
+            style={animStyle("out")}
+            className="absolute inset-0 flex items-center justify-center pointer-events-none"
+          >
+            <Image
+              src={images[prev]}
+              alt={`${alt} - ${prev + 1}`}
+              fill
+              sizes="100vw"
+              className="object-contain select-none"
+            />
+          </div>
+        )}
+
+        {/* Incoming image */}
         <div
-          className={`absolute inset-0 transition-transform duration-300 flex items-center justify-center overflow-auto ${
-            zoomed ? "cursor-zoom-out" : "cursor-zoom-in"
-          }`}
+          key={`in-${curr}`}
+          style={animStyle("in")}
+          className={`absolute inset-0 flex items-center justify-center ${zoomed ? "cursor-zoom-out" : "cursor-zoom-in"}`}
           onClick={() => setZoomed((z) => !z)}
         >
           <Image
-            src={images[index]}
-            alt={`${alt} - ${index + 1}`}
+            src={images[curr]}
+            alt={`${alt} - ${curr + 1}`}
             fill
             sizes="100vw"
-            className={`select-none transition-transform duration-300 ${
-              zoomed ? "object-none scale-150" : "object-contain"
-            }`}
+            className={`select-none transition-transform duration-300 ${zoomed ? "object-none scale-150" : "object-contain"}`}
             priority
           />
         </div>
@@ -69,8 +102,8 @@ export default function Lightbox({ images, initialIndex, alt, onClose }: Lightbo
         {/* Prev */}
         {images.length > 1 && (
           <button
-            onClick={prev}
-            className="absolute left-3 top-1/2 -translate-y-1/2 w-11 h-11 rounded-full bg-white/10 hover:bg-white/25 text-white flex items-center justify-center transition-colors backdrop-blur-sm border border-white/20"
+            onClick={prev_}
+            className="absolute left-3 top-1/2 -translate-y-1/2 w-11 h-11 rounded-full bg-black/60 hover:bg-black/80 text-white flex items-center justify-center transition-colors backdrop-blur-sm border border-white/30 shadow-lg z-10"
             aria-label="Poprzednie"
           >
             <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -82,8 +115,8 @@ export default function Lightbox({ images, initialIndex, alt, onClose }: Lightbo
         {/* Next */}
         {images.length > 1 && (
           <button
-            onClick={next}
-            className="absolute right-3 top-1/2 -translate-y-1/2 w-11 h-11 rounded-full bg-white/10 hover:bg-white/25 text-white flex items-center justify-center transition-colors backdrop-blur-sm border border-white/20"
+            onClick={next_}
+            className="absolute right-3 top-1/2 -translate-y-1/2 w-11 h-11 rounded-full bg-black/60 hover:bg-black/80 text-white flex items-center justify-center transition-colors backdrop-blur-sm border border-white/30 shadow-lg z-10"
             aria-label="Następne"
           >
             <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -95,7 +128,7 @@ export default function Lightbox({ images, initialIndex, alt, onClose }: Lightbo
         {/* Close */}
         <button
           onClick={onClose}
-          className="absolute top-4 right-4 w-10 h-10 rounded-full bg-white/10 hover:bg-white/25 text-white flex items-center justify-center transition-colors backdrop-blur-sm border border-white/20"
+          className="absolute top-4 right-4 w-10 h-10 rounded-full bg-black/60 hover:bg-black/80 text-white flex items-center justify-center transition-colors backdrop-blur-sm border border-white/30 shadow-lg z-10"
           aria-label="Zamknij"
         >
           <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -104,18 +137,18 @@ export default function Lightbox({ images, initialIndex, alt, onClose }: Lightbo
         </button>
 
         {/* Counter + zoom hint */}
-        <div className="absolute bottom-4 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2">
+        <div className="absolute bottom-4 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 z-10">
           <span className="text-white/50 text-xs">
-            {index + 1} / {images.length} &nbsp;·&nbsp; kliknij zdjęcie aby {zoomed ? "zmniejszyć" : "powiększyć"}
+            {curr + 1} / {images.length} &nbsp;·&nbsp; kliknij zdjęcie aby {zoomed ? "zmniejszyć" : "powiększyć"}
           </span>
           {images.length > 1 && (
             <div className="flex gap-1.5">
               {images.map((_, i) => (
                 <button
                   key={i}
-                  onClick={() => { setZoomed(false); setIndex(i); }}
+                  onClick={() => navigate(i, i > curr ? "next" : "prev")}
                   className={`w-1.5 h-1.5 rounded-full transition-all ${
-                    i === index ? "bg-cream w-4" : "bg-white/40"
+                    i === curr ? "bg-cream w-4" : "bg-white/40"
                   }`}
                 />
               ))}
@@ -125,4 +158,6 @@ export default function Lightbox({ images, initialIndex, alt, onClose }: Lightbo
       </div>
     </div>
   );
+
+  return createPortal(content, document.body);
 }

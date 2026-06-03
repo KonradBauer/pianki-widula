@@ -50,7 +50,7 @@ const jsonLd = {
   ],
   taxID: "5741004318",
   description:
-    "Sprzedaż pianek tapicerskich do materaców i tapicerki. Wkłady 7-strefowe profilowane CNC, materace do fizjoterapii i domów opieki, wykroje bezpyłowe. Kamyk k. Częstochowy.",
+    "Przetwórnia pianek tapicerskich Widuła  - bezpyłowe wycinanie kształtek, formatek i wkładów materacowych na maszynach CNC. Pianki HR, Visco, Typ T, RE. Cięcie konturowe. B2B. Kamyk k. Częstochowy.",
   hasOfferCatalog: {
     "@type": "OfferCatalog",
     name: "Oferta",
@@ -85,7 +85,7 @@ const jsonLd = {
           "@type": "Service",
           name: "Wykroje bezpyłowe CNC",
           description:
-            "Wykroje piankowe metodą bezpyłową na maszynach CNC. Precyzyjne kontury i czyste krawędzie — dowolne kształty i wymiary według dostarczonej formatki.",
+            "Wykroje piankowe metodą bezpyłową na maszynach CNC. Precyzyjne kontury i czyste krawędzie  - dowolne kształty i wymiary według dostarczonej formatki.",
           url: `${SITE_URL}/#realizacje`,
           provider: { "@type": "LocalBusiness", name: "FH Pianki Tapicerskie Jacek Widuła" },
           areaServed: { "@type": "Country", name: "PL" },
@@ -97,17 +97,31 @@ const jsonLd = {
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
-  icons: { icon: "/logo-newv2.png" },
-  title: "Pianki Tapicerskie Widuła | Kamyk k. Częstochowy",
+  icons: { icon: "/logo.png" },
+  title: "Przetwórnia Pianki Tapicerskiej Widuła | Kształtki i Formatki CNC | Kamyk k. Częstochowy",
   description:
-    "Firma Handlowa Pianki Tapicerskie Jacek Widuła - sprzedaż pianek do materaców i tapicerki. Wkłady 7-strefowe, materace do fizjoterapii, wykroje bezpyłowe. Cięcie na wymiar. Kamyk k. Częstochowy.",
+    "Przetwórnia pianek tapicerskich Widuła  - bezpyłowe wycinanie kształtek, formatek i wkładów materacowych na maszynach CNC. Pianki HR, Visco, Typ T, RE. Cięcie konturowe. B2B. Kamyk k. Częstochowy.",
+  keywords: [
+    "przetwórnia pianek tapicerskich",
+    "formatki piankowe",
+    "kształtki piankowe CNC",
+    "cięcie konturowe pianki",
+    "wkłady materacowe CNC",
+    "producent pianki Częstochowa",
+    "bezpyłowe wycinanie pianki",
+    "pianka HR wysokoelastyczna",
+    "pianka Visco Memory",
+    "pianka RE wtórnie spieniana",
+    "wykroje bezpyłowe",
+    "pianki tapicerskie B2B",
+  ],
   alternates: {
     canonical: "/",
   },
   openGraph: {
-    title: "Pianki Tapicerskie Widuła",
+    title: "Przetwórnia Pianki Widuła  - Kształtki i Formatki CNC",
     description:
-      "Sprzedaż pianek tapicerskich do materaców i tapicerki. Cięcie na wymiar. Kamyk k. Częstochowy.",
+      "Bezpyłowe wycinanie kształtek i formatek piankowych na maszynach CNC. Pianki HR, Visco, Typ T, RE. B2B. Kamyk k. Częstochowy.",
     type: "website",
     locale: "pl_PL",
     url: "/",
@@ -117,14 +131,14 @@ export const metadata: Metadata = {
         url: "/assets/og_image.png",
         width: 1200,
         height: 630,
-        alt: "Pianki Tapicerskie Widuła — Kamyk k. Częstochowy",
+        alt: "Pianki Tapicerskie Widuła  - Kamyk k. Częstochowy",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Pianki Tapicerskie Widuła",
-    description: "Sprzedaż pianek tapicerskich. Cięcie na wymiar. Kamyk k. Częstochowy.",
+    title: "Przetwórnia Pianki Widuła  - Kształtki CNC",
+    description: "Bezpyłowe wycinanie kształtek piankowych CNC. B2B. Kamyk k. Częstochowy.",
     images: ["/assets/og_image.png"],
   },
 };

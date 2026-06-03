@@ -23,6 +23,7 @@ Next.js 16 App Router project. Stack: Next.js 16.2.6 · React 19.2 · TypeScript
 - Body: **Plus Jakarta Sans** (`--font-jakarta`) — weight 300–700
 - Headings: **Playfair Display** (`--font-playfair-display`) — weight 400–700
 - Defined in `layout.tsx`, exposed as CSS vars via `@theme inline` in `globals.css`
+- Use normal dash - instead of em dash always
 
 ### Strona (single-page)
 ```

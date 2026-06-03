@@ -2,6 +2,7 @@
 
 import { useState, useEffect, useCallback, useRef } from "react";
 import Image from "next/image";
+import Lightbox from "@/components/ui/Lightbox";
 
 interface ProductCarouselProps {
   images: string[];
@@ -13,6 +14,7 @@ const AUTO_ADVANCE_MS = 4000;
 export default function ProductCarousel({ images, title }: ProductCarouselProps) {
   const [index, setIndex] = useState(0);
   const [paused, setPaused] = useState(false);
+  const [lightboxIndex, setLightboxIndex] = useState<number | null>(null);
   const timerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
 
   const prev = useCallback(() => setIndex((i) => (i - 1 + images.length) % images.length), [images.length]);
@@ -44,8 +46,9 @@ export default function ProductCarousel({ images, title }: ProductCarouselProps)
               alt={`${title} - ${i + 1}`}
               fill
               sizes="(max-width: 768px) 100vw, 50vw"
-              className="object-cover"
+              className="object-cover cursor-zoom-in"
               priority={i === 0}
+              onClick={() => setLightboxIndex(i)}
             />
           </div>
         ))}
@@ -115,6 +118,15 @@ export default function ProductCarousel({ images, title }: ProductCarouselProps)
           </button>
         ))}
       </div>
+
+      {lightboxIndex !== null && (
+        <Lightbox
+          images={images}
+          initialIndex={lightboxIndex}
+          alt={title}
+          onClose={() => setLightboxIndex(null)}
+        />
+      )}
     </div>
   );
 }

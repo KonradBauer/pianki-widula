@@ -13,8 +13,8 @@ export default function ProductionVideo() {
           </h2>
           <div className="section-divider mx-auto mb-6" />
           <p className="text-fluid-body text-white/60 max-w-xl mx-auto">
-            Nowoczesne maszyny CNC, precyzyjne cięcie i wieloletnie doświadczenie -
-            tak powstają nasze pianki.
+            Nowoczesne maszyny CNC, <strong className="text-white/80">cięcie bezpyłowe</strong> i wieloletnie
+            doświadczenie  - tak powstają precyzyjne kształtki, formatki i wkłady materacowe.
           </p>
         </AnimatedSection>
 
@@ -26,7 +26,7 @@ export default function ProductionVideo() {
               loop
               playsInline
               className="w-full aspect-video object-cover"
-              poster=""
+              poster="/assets/WYKROJE CNC.png"
             >
               <source src="/assets/proces-produkcji.mp4" type="video/mp4" />
             </video>
