@@ -23,10 +23,53 @@ export async function POST(req: NextRequest) {
     return NextResponse.json({ error: validationError }, { status: 400 });
   }
 
-  const name = body.name as string;
-  const email = body.email as string;
-  const phone = typeof body.phone === "string" ? body.phone : "";
-  const message = body.message as string;
+  const name = (body.name as string).trim();
+  const email = (body.email as string).trim();
+  const phone = typeof body.phone === "string" ? body.phone.trim() : "";
+  const message = (body.message as string).trim();
+
+  const esc = (s: string) =>
+    s.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;");
+
+  const html = `<!DOCTYPE html>
+<html lang="pl">
+<head><meta charset="utf-8" /></head>
+<body style="margin:0;padding:0;background:#f4f4f4;font-family:Arial,sans-serif">
+  <table width="100%" cellpadding="0" cellspacing="0" style="background:#f4f4f4;padding:32px 0">
+    <tr><td align="center">
+      <table width="600" cellpadding="0" cellspacing="0" style="background:#ffffff;border-radius:8px;overflow:hidden;max-width:600px">
+        <tr><td style="background:#2E2E2E;padding:24px 32px">
+          <span style="color:#5DBE3D;font-size:12px;letter-spacing:3px;text-transform:uppercase">pianki-widula.pl</span>
+          <h1 style="color:#ffffff;margin:8px 0 0;font-size:20px;font-weight:700">Nowe zapytanie ze strony</h1>
+        </td></tr>
+        <tr><td style="padding:32px">
+          <table width="100%" cellpadding="0" cellspacing="0">
+            <tr><td style="padding:10px 0;border-bottom:1px solid #eeeeee">
+              <span style="color:#888;font-size:11px;text-transform:uppercase;letter-spacing:1px">Imię i nazwisko</span><br/>
+              <span style="color:#1a1a1a;font-size:16px;font-weight:600">${esc(name)}</span>
+            </td></tr>
+            <tr><td style="padding:10px 0;border-bottom:1px solid #eeeeee">
+              <span style="color:#888;font-size:11px;text-transform:uppercase;letter-spacing:1px">Email</span><br/>
+              <a href="mailto:${esc(email)}" style="color:#5DBE3D;font-size:15px">${esc(email)}</a>
+            </td></tr>
+            ${phone ? `<tr><td style="padding:10px 0;border-bottom:1px solid #eeeeee">
+              <span style="color:#888;font-size:11px;text-transform:uppercase;letter-spacing:1px">Telefon</span><br/>
+              <a href="tel:${esc(phone)}" style="color:#5DBE3D;font-size:15px">${esc(phone)}</a>
+            </td></tr>` : ""}
+            <tr><td style="padding:10px 0">
+              <span style="color:#888;font-size:11px;text-transform:uppercase;letter-spacing:1px">Wiadomość</span><br/>
+              <p style="color:#1a1a1a;font-size:15px;line-height:1.6;margin:8px 0 0;white-space:pre-wrap">${esc(message)}</p>
+            </td></tr>
+          </table>
+        </td></tr>
+        <tr><td style="background:#f9f9f9;padding:16px 32px;text-align:center">
+          <span style="color:#aaa;font-size:11px">FH Pianki Tapicerskie Jacek Widuła · pianki-widula.pl</span>
+        </td></tr>
+      </table>
+    </td></tr>
+  </table>
+</body>
+</html>`;
 
   const res = await fetch("https://api.resend.com/emails", {
     method: "POST",
@@ -35,19 +78,11 @@ export async function POST(req: NextRequest) {
       "Content-Type": "application/json",
     },
     body: JSON.stringify({
-      from: "Formularz Widula <onboarding@resend.dev>",
+      from: "Formularz Widuła <onboarding@resend.dev>",
       to: "piankapianka@vp.pl",
       reply_to: email,
-      subject: `Nowe zapytanie od ${name}`,
-      html: `
-        <h2>Nowe zapytanie ze strony pianki-widula.pl</h2>
-        <p><strong>Imię i nazwisko:</strong> ${name}</p>
-        <p><strong>Email:</strong> ${email}</p>
-        ${phone ? `<p><strong>Telefon:</strong> ${phone}</p>` : ""}
-        <hr />
-        <p><strong>Wiadomość:</strong></p>
-        <p>${message.replace(/\n/g, "<br>")}</p>
-      `,
+      subject: `Zapytanie od ${name} - pianki-widula.pl`,
+      html,
     }),
   });
 

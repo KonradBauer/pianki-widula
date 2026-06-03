@@ -84,8 +84,13 @@ export default function Footer() {
           </div>
         </div>
 
-        <div className="pt-6 flex flex-col sm:flex-row items-center justify-between gap-4 text-white/30 text-fluid-sm">
-          <span>© {new Date().getFullYear()} Pianki Tapicerskie Jacek Widuła</span>
+        <div className="pt-6 flex flex-col items-center gap-2 text-white/30 text-fluid-sm">
+          <div className="flex flex-col sm:flex-row items-center gap-4">
+            <span>© {new Date().getFullYear()} Pianki Tapicerskie Jacek Widuła</span>
+            <Link href="/polityka-prywatnosci" className="hover:text-cream transition-colors">
+              Polityka Prywatności
+            </Link>
+          </div>
           <span>
             Wykonanie:{" "}
             <a
@@ -97,12 +102,6 @@ export default function Footer() {
               studiocodeart.pl
             </a>
           </span>
-          <Link
-            href="/polityka-prywatnosci"
-            className="hover:text-cream transition-colors"
-          >
-            Polityka Prywatności
-          </Link>
         </div>
       </div>
     </footer>
