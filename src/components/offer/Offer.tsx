@@ -1,3 +1,4 @@
+import Image from "next/image";
 import AnimatedSection from "@/components/ui/AnimatedSection";
 import OfferCard from "./OfferCard";
 
@@ -55,6 +56,18 @@ export default function Offer() {
             <OfferCard key={product.name} {...product} index={i} />
           ))}
         </div>
+
+        <AnimatedSection delay={0.25} className="mt-10">
+          <div className="rounded-2xl overflow-hidden shadow-xl max-w-lg mx-auto">
+            <Image
+              src="/assets/Pianki do mebli tapicerowanych.png"
+              alt="Pianki do mebli tapicerowanych - FH Pianki Widuła"
+              width={600}
+              height={600}
+              className="w-full object-cover"
+            />
+          </div>
+        </AnimatedSection>
 
         <AnimatedSection className="mt-12 text-center" delay={0.3}>
           <p className="text-white/50 text-fluid-sm mb-6">

@@ -33,7 +33,7 @@ export default function ProductCarousel({ images, title }: ProductCarouselProps)
       onMouseLeave={() => setPaused(false)}
     >
       {/* Main image */}
-      <div className="relative aspect-[4/3] w-full rounded-2xl overflow-hidden bg-cream-light/40">
+      <div className="relative aspect-[4/3] w-full rounded-2xl overflow-hidden bg-white">
         {images.map((src, i) => (
           <div
             key={src}

@@ -1,3 +1,4 @@
+import Image from "next/image";
 import AnimatedSection from "@/components/ui/AnimatedSection";
 import ProductCarousel from "./ProductCarousel";
 
@@ -18,6 +19,7 @@ const SECTIONS = [
       ...jpegRange("fizjoterapia", 7),
       "/assets/fizjoterapia/08.png",
     ],
+    brochure: null as string | null,
   },
   {
     id: "7strefowe",
@@ -26,6 +28,7 @@ const SECTIONS = [
     description:
       "Wkłady do materacy z 7 strefami twardości, precyzyjnie profilowane na maszynach CNC. Każda strefa dostosowana do innej partii ciała - optymalny komfort i wsparcie podczas snu.",
     images: jpegRange("7strefowe", 7),
+    brochure: null as string | null,
   },
   {
     id: "wykroje",
@@ -39,6 +42,7 @@ const SECTIONS = [
       "/assets/wykroje/16.png",
       "/assets/wykroje/17.png",
     ],
+    brochure: "/assets/WYKROJE CNC.png",
   },
 ];
 
@@ -66,6 +70,17 @@ export default function ProductGalleries() {
                 <p className="text-fluid-body text-site-text-muted">
                   {section.description}
                 </p>
+                {section.brochure && (
+                  <div className="mt-6 rounded-xl overflow-hidden shadow-md">
+                    <Image
+                      src={section.brochure}
+                      alt={`${section.title} - broszura`}
+                      width={500}
+                      height={500}
+                      className="w-full object-cover"
+                    />
+                  </div>
+                )}
               </AnimatedSection>
 
               <AnimatedSection
