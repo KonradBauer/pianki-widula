@@ -10,27 +10,27 @@ const APPLICATIONS = [
   },
   {
     title: "Materacowa",
-    description: "Wkłady materacowe 7-strefowe profilowane CNC",
+    description: "Wkłady materacowe 7-strefowe jednostronne i dwustronne profilowane CNC",
     image: "/assets/zastosowania/materacowa.jpeg",
   },
   {
     title: "Dziecięca",
-    description: "Wkładki do wózków dziecięcych, foteliki samochodowe",
+    description: "Formatki do wózków dziecięcych i fotelików samochodowych",
     image: "/assets/zastosowania/dziecieca.jpeg",
   },
   {
     title: "Zoologiczna",
-    description: "Legowiska i maty dla psów, kotów i innych zwierząt",
+    description: "Legowiska, ramposchody, schody dla psów i kotów oraz innych zwierząt",
     image: "/assets/zastosowania/zoologiczna.jpeg",
   },
   {
     title: "Sportowa",
-    description: "Materace sportowe, maty do ćwiczeń, ochronniki",
+    description: "Materace gimnastyczne i asekuracyjne oraz klocki i tory przeszkód dla dzieci",
     image: "/assets/zastosowania/sportowa.jpeg",
   },
   {
     title: "Rehabilitacyjna",
-    description: "Kształtki rehabilitacyjne, podkładki, maty terapeutyczne",
+    description: "Materace rehabilitacyjne i przeciwodleżynowe, kliny rehabilitacyjne do ćwiczeń i terapii",
     image: "/assets/zastosowania/rehabilitacyjna.jpeg",
   },
   {

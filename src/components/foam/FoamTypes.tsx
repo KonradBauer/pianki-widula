@@ -10,7 +10,7 @@ const FOAM_TYPES = [
   },
   {
     type: "Typ HR",
-    name: "Pianka wysokoelastyczna",
+    name: "Pianka wysokoelastyczna i trudnopalna",
     description:
       "High Resilience - wysoka sprężystość, długa trwałość. Idealna do wkładów 7-strefowych, materaców premium i mebli tapicerowanych wymagających doskonałego komfortu.",
   },
@@ -24,7 +24,7 @@ const FOAM_TYPES = [
     type: "Typ RE",
     name: "Pianka wtórnie spieniana",
     description:
-      "Produkowana z recyklingu odpadów piankowych. Ekonomiczna i ekologiczna - sprawdza się jako wypełnienie, podkłady i wszędzie tam gdzie nie jest wymagana wysoka elastyczność.",
+      "Produkowana z recyklingu odpadów piankowych. Ekonomiczna i ekologiczna - sprawdza się jako wypełnienie w materacach sportowych i różnych podkładach oraz wszędzie tam gdzie nie jest wymagana wysoka elastyczność.",
   },
 ];
 
