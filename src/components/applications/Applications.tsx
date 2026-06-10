@@ -16,27 +16,27 @@ const APPLICATIONS = [
   {
     title: "Dziecięca",
     description: "Formatki do wózków dziecięcych i fotelików samochodowych",
-    image: "/assets/zastosowania/dziecieca.jpeg",
+    image: "/assets/zastosowania/dziecieca.webp",
   },
   {
     title: "Zoologiczna",
     description: "Legowiska, ramposchody, schody dla psów i kotów oraz innych zwierząt",
-    image: "/assets/zastosowania/zoologiczna.jpeg",
+    image: "/assets/zastosowania/zoologiczna.webp",
   },
   {
     title: "Sportowa",
     description: "Materace gimnastyczne i asekuracyjne oraz klocki i tory przeszkód dla dzieci",
-    image: "/assets/zastosowania/sportowa.jpeg",
+    image: "/assets/zastosowania/sportowa.png",
   },
   {
     title: "Rehabilitacyjna",
     description: "Materace rehabilitacyjne i przeciwodleżynowe, kliny rehabilitacyjne do ćwiczeń i terapii",
-    image: "/assets/zastosowania/rehabilitacyjna.jpeg",
+    image: "/assets/zastosowania/rehabilitacyjna.png",
   },
   {
     title: "Motoryzacyjna",
     description: "Materace do kamperów, tirów i przyczep kempingowych",
-    image: "/assets/zastosowania/motoryzacyjna.jpeg",
+    image: "/assets/zastosowania/motoryzacyjna.jpg",
   },
   {
     title: "Akustyczna",
@@ -46,7 +46,7 @@ const APPLICATIONS = [
   {
     title: "Ogrodowa",
     description: "Wkłady do mebli ogrodowych i siedzisk zewnętrznych",
-    image: "/assets/zastosowania/ogrodowa.jpeg",
+    image: "/assets/zastosowania/ogrodowa.jpg",
   },
 ];
 
