@@ -6,12 +6,12 @@ const APPLICATIONS = [
   {
     title: "Meblarska",
     description: "Kształtki i formatki do kanap, foteli, sof i mebli tapicerowanych",
-    image: "/assets/zastosowania/meblarska.jpeg",
+    image: "/assets/zastosowania/meblarska.png",
   },
   {
     title: "Materacowa",
     description: "Wkłady materacowe 7-strefowe jednostronne i dwustronne profilowane CNC",
-    image: "/assets/zastosowania/materacowa.jpeg",
+    image: "/assets/zastosowania/materacowa.png",
   },
   {
     title: "Dziecięca",
