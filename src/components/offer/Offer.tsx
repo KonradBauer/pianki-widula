@@ -1,4 +1,3 @@
-import Image from "next/image";
 import AnimatedSection from "@/components/ui/AnimatedSection";
 import OfferCard from "./OfferCard";
 import { highlight } from "@/lib/highlight";
@@ -56,19 +55,7 @@ export default function Offer() {
           ))}
         </div>
 
-        <AnimatedSection delay={0.25} className="mt-10">
-          <div className="rounded-2xl overflow-hidden shadow-xl max-w-lg mx-auto">
-            <Image
-              src="/assets/Pianki do mebli tapicerowanych.png"
-              alt="Pianki do mebli tapicerowanych - FH Pianki Widuła"
-              width={600}
-              height={600}
-              className="w-full object-cover"
-            />
-          </div>
-        </AnimatedSection>
-
-        <AnimatedSection className="mt-12 text-center" delay={0.3}>
+<AnimatedSection className="mt-12 text-center" delay={0.3}>
           <p className="text-white/50 text-fluid-sm mb-6">
             Nie znalazłeś tego, czego szukasz? Skontaktuj się - mamy więcej w ofercie.
           </p>

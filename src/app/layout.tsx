@@ -33,12 +33,6 @@ const jsonLd = {
       opens: "08:00",
       closes: "16:00",
     },
-    {
-      "@type": "OpeningHoursSpecification",
-      dayOfWeek: ["Saturday"],
-      opens: "08:00",
-      closes: "13:00",
-    },
   ],
   taxID: "5741004318",
   description:

@@ -11,27 +11,6 @@ function jpegRange(folder: string, count: number) {
 
 const SECTIONS = [
   {
-    id: "fizjoterapia",
-    title: "Materace i wkłady do fizjoterapii",
-    subtitle: "Szpitale · Domy opieki · Rehabilitacja",
-    description:
-      "Produkujemy specjalistyczne materace i wkłady piankowe przeznaczone dla placówek medycznych, szpitali i domów opieki. Wykonane z pianek o odpowiedniej twardości i gęstości, zapewniają komfort i wsparcie dla pacjentów.",
-    images: [
-      ...jpegRange("fizjoterapia", 7),
-      "/assets/fizjoterapia/08.png",
-    ],
-    brochure: null as string | null,
-  },
-  {
-    id: "7strefowe",
-    title: "Wkłady 7-strefowe profilowane",
-    subtitle: "Ergonomia · Wsparcie kręgosłupa · CNC",
-    description:
-      "Wkłady do materacy z 7 strefami twardości, precyzyjnie profilowane na maszynach CNC. Każda strefa dostosowana do innej partii ciała - optymalny komfort i wsparcie podczas snu.",
-    images: jpegRange("7strefowe", 7),
-    brochure: null as string | null,
-  },
-  {
     id: "wykroje",
     title: "Wykroje bezpyłowe",
     subtitle: "Precyzja CNC · Dowolne kształty · Czyste krawędzie",
@@ -47,7 +26,28 @@ const SECTIONS = [
       "/assets/wykroje/20.jpeg",
       "/assets/wykroje/21.jpeg",
     ],
-    brochure: "/assets/WYKROJE CNC.png",
+    brochure: null as string | null,
+  },
+  {
+    id: "7strefowe",
+    title: "Wkłady 7-strefowe profilowane",
+    subtitle: "Ergonomia · Wsparcie kręgosłupa · CNC",
+    description:
+      "Wkłady do materacy z 7 strefami twardości, precyzyjnie profilowane na maszynach CNC. Każda strefa dostosowana do innej partii ciała - optymalny komfort i wsparcie podczas snu.",
+    images: jpegRange("7strefowe", 7),
+    brochure: null as string | null,
+  },
+  {
+    id: "legowiska",
+    title: "Legowiska dla zwierząt",
+    subtitle: "Psy · Koty · Trwałość · Dowolne wymiary",
+    description:
+      "Wkłady piankowe do legowisk dla psów, kotów i innych zwierząt domowych - wycinane bezpyłowo na maszynach CNC według dowolnego wymiaru i kształtu. Pianki HR i RE odporne na odkształcenia, łatwe do mycia. Idealne dla producentów legowisk i akcesoriów zoologicznych.",
+    images: [
+      ...jpegRange("fizjoterapia", 7),
+      "/assets/fizjoterapia/08.png",
+    ],
+    brochure: null as string | null,
   },
 ];
 

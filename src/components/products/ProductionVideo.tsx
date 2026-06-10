@@ -27,7 +27,7 @@ export default function ProductionVideo() {
               loop
               playsInline
               className="w-full aspect-video object-cover"
-              poster="/assets/WYKROJE CNC.png"
+
             >
               <source src="/assets/proces-produkcji.mp4" type="video/mp4" />
             </video>

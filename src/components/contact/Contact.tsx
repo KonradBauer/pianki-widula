@@ -21,7 +21,7 @@ const CONTACT_INFO = [
 
 const HOURS = [
   { day: "Poniedziałek – Piątek", hours: "08:00 – 16:00" },
-  { day: "Sobota",                hours: "08:00 – 13:00" },
+  { day: "Sobota",                hours: null },
   { day: "Niedziela",             hours: null },
 ];
 
