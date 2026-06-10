@@ -13,8 +13,9 @@ export default function ProductionVideo() {
           </h2>
           <div className="section-divider mx-auto mb-6" />
           <p className="text-fluid-body text-white/60 max-w-xl mx-auto">
-            Nowoczesne maszyny CNC, <strong className="text-white/80">cięcie bezpyłowe</strong> i wieloletnie
-            doświadczenie  - tak powstają precyzyjne kształtki, formatki i wkłady materacowe.
+            Nowoczesne maszyny <span className="font-bold underline text-cream">CNC</span>,{" "}
+            <span className="font-bold underline text-cream">cięcie bezpyłowe</span> i wieloletnie
+            doświadczenie - tak powstają precyzyjne kształtki, formatki i wkłady materacowe.
           </p>
         </AnimatedSection>
 

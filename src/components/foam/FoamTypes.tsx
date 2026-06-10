@@ -1,4 +1,5 @@
 import AnimatedSection from "@/components/ui/AnimatedSection";
+import { highlight } from "@/lib/highlight";
 
 const FOAM_TYPES = [
   {
@@ -40,9 +41,7 @@ export default function FoamTypes() {
           </h2>
           <div className="section-divider mx-auto mb-6" />
           <p className="text-fluid-body text-white/60 max-w-2xl mx-auto">
-            Oferujemy pianki poliuretanowe wszystkich klas - od standardowych po
-            specjalistyczne. Każdy typ dostępny w różnych twardościach i gęstościach,
-            cięty bezpyłowo na maszynach CNC.
+            {highlight("Oferujemy pianki poliuretanowe wszystkich klas - od standardowych po specjalistyczne. Każdy typ dostępny w różnych twardościach i gęstościach, cięty bezpyłowo na maszynach CNC.")}
           </p>
         </AnimatedSection>
 

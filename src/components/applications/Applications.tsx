@@ -1,5 +1,6 @@
 import Image from "next/image";
 import AnimatedSection from "@/components/ui/AnimatedSection";
+import { highlight } from "@/lib/highlight";
 
 const APPLICATIONS = [
   {
@@ -62,9 +63,7 @@ export default function Applications() {
           </h2>
           <div className="section-divider mx-auto mb-6" />
           <p className="text-fluid-body text-site-text-muted max-w-2xl mx-auto">
-            Nasze pianki tapicerskie i wkłady CNC trafiają do wielu branż.
-            Bezpyłowe cięcie konturowe pozwala realizować nawet najbardziej
-            złożone kształty i formatki  - na zamówienie.
+            {highlight("Nasze pianki tapicerskie i wkłady CNC trafiają do wielu branż. Bezpyłowe cięcie konturowe pozwala realizować nawet najbardziej złożone kształty i formatki - na zamówienie.")}
           </p>
         </AnimatedSection>
 
@@ -86,7 +85,7 @@ export default function Applications() {
                     Branża {app.title.toLowerCase()}
                   </h3>
                   <p className="text-fluid-sm text-site-text-muted leading-relaxed">
-                    {app.description}
+                    {highlight(app.description)}
                   </p>
                 </div>
               </div>

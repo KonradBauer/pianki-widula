@@ -23,7 +23,7 @@
   --color-site-text: var(--site-text);
   --color-site-text-muted: var(--site-text-muted);
   --font-sans: var(--font-jakarta);
-  --font-playfair: var(--font-playfair-display), Georgia, serif;
+  --font-playfair: var(--font-jakarta);
 }
 
 html {

@@ -1,6 +1,7 @@
 import Image from "next/image";
 import AnimatedSection from "@/components/ui/AnimatedSection";
 import ProductCarousel from "./ProductCarousel";
+import { highlight } from "@/lib/highlight";
 
 function jpegRange(folder: string, count: number) {
   return Array.from({ length: count }, (_, i) =>
@@ -72,7 +73,7 @@ export default function ProductGalleries() {
                 </h2>
                 <div className="section-divider mb-5" />
                 <p className="text-fluid-body text-site-text-muted">
-                  {section.description}
+                  {highlight(section.description)}
                 </p>
                 {section.brochure && (
                   <div className="mt-6 rounded-xl overflow-hidden shadow-md">

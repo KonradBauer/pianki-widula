@@ -1,6 +1,7 @@
 import Image from "next/image";
 import AnimatedSection from "@/components/ui/AnimatedSection";
 import OfferCard from "./OfferCard";
+import { highlight } from "@/lib/highlight";
 
 const PRODUCTS = [
   {
@@ -45,9 +46,7 @@ export default function Offer() {
           </h2>
           <div className="section-divider mx-auto mb-6" />
           <p className="text-fluid-body text-white/60 max-w-2xl mx-auto">
-            Precyzyjne cięcie CNC pianek tapicerskich dla producentów mebli,
-            materaców i wielu innych branż. Kształtki, formatki i wkłady
-            materacowe  - bezpyłowo, na wymiar, według Twojej specyfikacji.
+            {highlight("Precyzyjne cięcie CNC pianek tapicerskich dla producentów mebli, materaców i wielu innych branż. Kształtki, formatki i wkłady materacowe - bezpyłowo, na wymiar, według Twojej specyfikacji.")}
           </p>
         </AnimatedSection>
 

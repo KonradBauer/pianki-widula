@@ -1,5 +1,7 @@
 "use client";
 
+import { highlight } from "@/lib/highlight";
+
 export default function Hero() {
   return (
     <section
@@ -37,15 +39,14 @@ export default function Hero() {
           style={{ animationDelay: "0.12s" }}
         >
           Kształtki i formatki{" "}
-          <span className="text-cream italic">cięte CNC</span>
+          <span className="text-cream italic">cięte <span className="font-bold underline">CNC</span></span>
         </h1>
 
         <p
           className="animate-in-up text-fluid-body text-white/70 max-w-2xl mx-auto mb-10"
           style={{ animationDelay: "0.26s" }}
         >
-          Bezpyłowe wycinanie kształtek, formatek i wkładów materacowych na maszynach
-          CNC. Pianki HR, Visco, Typ&nbsp;T, RE. Cięcie konturowe na wymiar. Obsługa B2B.
+          {highlight("Bezpyłowe wycinanie kształtek, formatek i wkładów materacowych na maszynach CNC. Pianki HR, Visco, Typ T, RE. Cięcie konturowe na wymiar. Obsługa B2B.")}
         </p>
 
         <div

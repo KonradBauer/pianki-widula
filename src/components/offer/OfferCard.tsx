@@ -2,6 +2,7 @@
 
 import { useEffect, useRef, useState, CSSProperties } from "react";
 import Image from "next/image";
+import { highlight } from "@/lib/highlight";
 
 interface OfferCardProps {
   name: string;
@@ -72,7 +73,7 @@ export default function OfferCard({
           {name}
         </h3>
         <span className="text-fluid-sm text-cream font-medium block mb-3">{subtitle}</span>
-        <p className="text-fluid-sm text-site-text-muted mb-4">{description}</p>
+        <p className="text-fluid-sm text-site-text-muted mb-4">{highlight(description)}</p>
         <ul className="flex flex-wrap gap-2">
           {properties.map((prop) => (
             <li

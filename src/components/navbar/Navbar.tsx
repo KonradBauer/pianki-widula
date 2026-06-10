@@ -67,7 +67,7 @@ export default function Navbar() {
             : "bg-gradient-to-b from-black/40 to-transparent"
         )}
       >
-        <nav className="section-px max-w-7xl mx-auto flex items-center justify-between py-2">
+        <nav className="pl-3 md:pl-4 pr-[clamp(1.25rem,5vw,6rem)] max-w-7xl mx-auto flex items-center justify-between py-2">
           <Link
             href="#hero"
             className="relative z-50 flex items-center group"
@@ -77,20 +77,18 @@ export default function Navbar() {
               <Image
                 src="/logo.png"
                 alt="Pianki Tapicerskie Widuła"
-                width={160}
-                height={55}
-                className="object-contain h-10 w-auto"
+                width={400}
+                height={140}
+                className="object-contain h-28 w-auto"
               />
             </div>
-            <div
-              className="hidden md:block rounded-xl px-3 py-1.5 transition-all duration-300 bg-white shadow-sm"
-            >
+            <div className="hidden md:block rounded-xl px-3 py-1.5 transition-all duration-300 bg-white shadow-sm">
               <Image
                 src="/logo.png"
                 alt="Pianki Tapicerskie Widuła"
-                width={220}
-                height={192}
-                className="object-contain"
+                width={560}
+                height={200}
+                className="object-contain h-32 w-auto"
               />
             </div>
           </Link>
