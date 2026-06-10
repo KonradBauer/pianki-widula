@@ -79,7 +79,7 @@ export default function Contact() {
                 {CONTACT_INFO.map((item) => (
                   <div
                     key={item.label}
-                    className="bg-cream-light/40 rounded-xl p-4 border border-cream/20"
+                    className="bg-[#CCCCCC] rounded-xl p-4 border border-navy/20"
                   >
                     <span className="text-xl mb-2 block" aria-hidden="true">{item.icon}</span>
                     <span className="text-xs font-semibold text-navy tracking-widest uppercase block mb-1">
@@ -88,12 +88,12 @@ export default function Contact() {
                     {item.href ? (
                       <a
                         href={item.href}
-                        className="text-fluid-sm text-site-text-muted hover:text-navy transition-colors whitespace-pre-line break-all"
+                        className="text-fluid-sm text-navy hover:text-navy-light transition-colors whitespace-pre-line break-all"
                       >
                         {item.value}
                       </a>
                     ) : (
-                      <span className="text-fluid-sm text-site-text-muted whitespace-pre-line">
+                      <span className="text-fluid-sm text-navy whitespace-pre-line">
                         {item.value}
                       </span>
                     )}
@@ -102,7 +102,7 @@ export default function Contact() {
               </div>
 
               {/* Hours */}
-              <div className="bg-cream-light/40 rounded-xl p-4 border border-cream/20">
+              <div className="bg-[#CCCCCC] rounded-xl p-4 border border-navy/20">
                 <div className="flex items-center gap-3 mb-3">
                   <span className="text-xl" aria-hidden="true">🕐</span>
                   <span className="text-xs font-semibold text-navy tracking-widest uppercase">
@@ -126,7 +126,7 @@ export default function Contact() {
                       key={day}
                       className="flex justify-between text-fluid-sm"
                     >
-                      <span className="text-site-text-muted">{day}</span>
+                      <span className="text-navy">{day}</span>
                       {hours ? (
                         <span className="text-navy font-medium">{hours}</span>
                       ) : (

@@ -78,7 +78,7 @@ export default function OfferCard({
           {properties.map((prop) => (
             <li
               key={prop}
-              className="px-3 py-1 rounded-full bg-cream-light/60 text-navy text-xs font-medium border border-cream/30"
+              className="px-3 py-1 rounded-full bg-[#CCCCCC]/60 text-navy text-xs font-medium"
             >
               {prop}
             </li>

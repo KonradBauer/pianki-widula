@@ -49,7 +49,7 @@ const FEATURES = [
 
 export default function WhyUs() {
   return (
-    <section id="dlaczego-my" className="section-py bg-cream-light/30">
+    <section id="dlaczego-my" className="section-py bg-white">
       <div className="section-px max-w-7xl mx-auto">
         <AnimatedSection className="text-center mb-14">
           <span className="inline-block text-cream font-semibold text-fluid-sm tracking-widest uppercase mb-4">

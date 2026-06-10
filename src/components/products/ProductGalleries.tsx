@@ -34,7 +34,15 @@ const SECTIONS = [
     subtitle: "Ergonomia · Wsparcie kręgosłupa · CNC",
     description:
       "Wkłady do materacy z 7 strefami twardości, precyzyjnie profilowane na maszynach CNC. Każda strefa dostosowana do innej partii ciała - optymalny komfort i wsparcie podczas snu.",
-    images: jpegRange("7strefowe", 7),
+    images: [
+      "/assets/7strefowe/05.jpeg",
+      "/assets/7strefowe/01.jpeg",
+      "/assets/7strefowe/02.jpeg",
+      "/assets/7strefowe/03.jpeg",
+      "/assets/7strefowe/04.jpeg",
+      "/assets/7strefowe/06.jpeg",
+      "/assets/7strefowe/07.jpeg",
+    ],
     brochure: null as string | null,
   },
   {
@@ -57,7 +65,7 @@ export default function ProductGalleries() {
       {SECTIONS.map((section, si) => (
         <div
           key={section.id}
-          className={`section-py ${si % 2 === 1 ? "bg-cream-light/30" : "bg-bg"}`}
+          className="section-py bg-white"
         >
           <div className="section-px max-w-7xl mx-auto">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 items-center">
