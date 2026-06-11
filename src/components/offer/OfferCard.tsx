@@ -9,7 +9,6 @@ interface OfferCardProps {
   subtitle: string;
   description: string;
   properties: string[];
-  icon: string;
   image: string;
   index: number;
   contain?: boolean;
@@ -20,7 +19,6 @@ export default function OfferCard({
   subtitle,
   description,
   properties,
-  icon,
   image,
   index,
   contain,
@@ -57,7 +55,7 @@ export default function OfferCard({
       className={`${visible ? "animate-in-up" : ""} bg-white rounded-2xl overflow-hidden border border-cream/20 shadow-sm card-lift group cursor-default`}
       style={style}
     >
-      <div className={`relative aspect-[16/9] w-full${contain ? " bg-white p-4" : ""}`}>
+      <div className={`relative aspect-[16/9] w-full overflow-hidden${contain ? " bg-white p-4" : ""}`}>
         <Image
           src={image}
           alt={name}
@@ -66,11 +64,6 @@ export default function OfferCard({
           className={contain ? "object-contain transition-transform duration-500 group-hover:scale-105" : "object-cover transition-transform duration-500 group-hover:scale-105"}
         />
         {!contain && <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent" />}
-        {!contain && (
-          <div className="absolute bottom-3 left-4 w-10 h-10 rounded-xl bg-white/90 flex items-center justify-center text-xl">
-            {icon}
-          </div>
-        )}
       </div>
       <div className="p-6">
         <h3 className="text-fluid-h3 font-playfair text-navy font-semibold leading-tight mb-1">
