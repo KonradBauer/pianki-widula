@@ -29,6 +29,7 @@ const PRODUCTS = [
     properties: ["Wózki dziecięce", "Legowiska", "Panele akustyczne", "Foteliki"],
     icon: "📦",
     image: "/assets/oferta/pozostałe.webp",
+    contain: true,
   },
 ];
 

@@ -17,16 +17,19 @@ const APPLICATIONS = [
     title: "Dziecięca",
     description: "Formatki do wózków dziecięcych i fotelików samochodowych",
     image: "/assets/zastosowania/dziecieca.webp",
+    contain: true,
   },
   {
     title: "Zoologiczna",
     description: "Legowiska, ramposchody, schody dla psów i kotów oraz innych zwierząt",
     image: "/assets/zastosowania/zoologiczna.webp",
+    contain: true,
   },
   {
     title: "Sportowa",
     description: "Materace gimnastyczne i asekuracyjne oraz klocki i tory przeszkód dla dzieci",
     image: "/assets/zastosowania/sportowa.jpg",
+    contain: true,
   },
   {
     title: "Rehabilitacyjna",
@@ -71,13 +74,13 @@ export default function Applications() {
           {APPLICATIONS.map((app, i) => (
             <AnimatedSection key={app.title} delay={i * 0.06}>
               <div className="bg-white rounded-2xl overflow-hidden border border-cream/20 shadow-sm h-full group">
-                <div className="relative aspect-[4/3] w-full overflow-hidden">
+                <div className={`relative aspect-[4/3] w-full overflow-hidden ${"contain" in app && app.contain ? "bg-white p-4" : ""}`}>
                   <Image
                     src={app.image}
                     alt={`Branża ${app.title.toLowerCase()}  - pianki tapicerskie`}
                     fill
                     sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
-                    className="object-cover transition-transform duration-500 group-hover:scale-110"
+                    className={"contain" in app && app.contain ? "object-contain transition-transform duration-500 group-hover:scale-105" : "object-cover transition-transform duration-500 group-hover:scale-110"}
                   />
                 </div>
                 <div className="p-5">
