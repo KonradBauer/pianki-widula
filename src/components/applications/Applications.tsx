@@ -7,49 +7,58 @@ const APPLICATIONS = [
     title: "Meblarska",
     description: "Kształtki i formatki do kanap, foteli, sof i mebli tapicerowanych",
     image: "/assets/zastosowania/meblarska.png",
+    alt: "Kształtki piankowe CNC do produkcji mebli tapicerowanych - kanapy i fotele",
   },
   {
     title: "Materacowa",
     description: "Wkłady materacowe 7-strefowe jednostronne i dwustronne profilowane CNC",
     image: "/assets/zastosowania/materacowa.png",
+    alt: "Wkłady materacowe 7-strefowe profilowane CNC - Pianki Widuła",
   },
   {
     title: "Dziecięca",
     description: "Formatki do wózków dziecięcych i fotelików samochodowych",
     image: "/assets/zastosowania/dziecieca.webp",
+    alt: "Pianki do wózków dziecięcych i fotelików - OEKO-TEX bezpieczne dla dzieci",
     contain: true,
   },
   {
     title: "Zoologiczna",
     description: "Legowiska, ramposchody, schody dla psów i kotów oraz innych zwierząt",
     image: "/assets/zastosowania/zoologiczna.webp",
+    alt: "Wkłady piankowe do legowisk dla psów i kotów cięte na wymiar CNC",
     contain: true,
   },
   {
     title: "Sportowa",
     description: "Materace gimnastyczne i asekuracyjne oraz klocki i tory przeszkód dla dzieci",
     image: "/assets/zastosowania/sportowa.jpg",
+    alt: "Pianki do materaców gimnastycznych i asekuracyjnych cięte CNC",
     contain: true,
   },
   {
     title: "Rehabilitacyjna",
     description: "Materace rehabilitacyjne i przeciwodleżynowe, kliny rehabilitacyjne do ćwiczeń i terapii",
     image: "/assets/zastosowania/rehabilitacyjna.png",
+    alt: "Wkłady piankowe do materaców rehabilitacyjnych i przeciwodleżynowych",
   },
   {
     title: "Motoryzacyjna",
     description: "Materace do kamperów, tirów i przyczep kempingowych",
     image: "/assets/zastosowania/motoryzacyjna.webp",
+    alt: "Materace piankowe na wymiar do kamperów, tirów i przyczep kempingowych",
   },
   {
     title: "Akustyczna",
-    description: "Panele akustyczne  - tzw. piramidki piankowe",
+    description: "Panele akustyczne - tzw. piramidki piankowe",
     image: "/assets/zastosowania/akustyczna.jpeg",
+    alt: "Piankowe panele akustyczne piramidki wycinane CNC",
   },
   {
     title: "Ogrodowa",
     description: "Wkłady do mebli ogrodowych i siedzisk zewnętrznych",
     image: "/assets/zastosowania/ogrodowa.webp",
+    alt: "Wkłady piankowe do mebli ogrodowych i siedzisk zewnętrznych na wymiar",
   },
 ];
 
@@ -77,7 +86,7 @@ export default function Applications() {
                 <div className={`relative aspect-[4/3] w-full overflow-hidden ${"contain" in app && app.contain ? "bg-white p-4" : ""}`}>
                   <Image
                     src={app.image}
-                    alt={`Branża ${app.title.toLowerCase()}  - pianki tapicerskie`}
+                    alt={app.alt}
                     fill
                     sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
                     className={"contain" in app && app.contain ? "object-contain transition-transform duration-500 group-hover:scale-105" : "object-cover transition-transform duration-500 group-hover:scale-110"}

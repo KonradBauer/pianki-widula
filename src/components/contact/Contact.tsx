@@ -21,7 +21,7 @@ const CONTACT_INFO = [
 
 const HOURS = [
   { day: "Poniedziałek – Piątek", hours: "08:00 – 16:00" },
-  { day: "Sobota",                hours: null },
+  { day: "Sobota",                hours: "08:00 – 13:00" },
   { day: "Niedziela",             hours: null },
 ];
 
@@ -38,9 +38,13 @@ export default function Contact() {
   const [open, setOpen] = useState<boolean | null>(null);
 
   useEffect(() => {
-    setOpen(isOpenNow());
-    const timer = setInterval(() => setOpen(isOpenNow()), 60_000);
-    return () => clearInterval(timer);
+    const update = () => setOpen(isOpenNow());
+    const init = setTimeout(update, 0);
+    const timer = setInterval(update, 60_000);
+    return () => {
+      clearTimeout(init);
+      clearInterval(timer);
+    };
   }, []);
 
   return (

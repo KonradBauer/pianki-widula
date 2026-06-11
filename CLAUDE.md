@@ -19,75 +19,149 @@ Package manager: **pnpm**. No test suite configured yet.
 
 Next.js 16 App Router project. Stack: Next.js 16.2.6 · React 19.2 · TypeScript 5 · Tailwind CSS v4 · React Compiler enabled.
 
-### Fonts
-- Body: **Plus Jakarta Sans** (`--font-jakarta`) — weight 300–700
-- Headings: **Playfair Display** (`--font-playfair-display`) — weight 400–700
-- Defined in `layout.tsx`, exposed as CSS vars via `@theme inline` in `globals.css`
-- Use normal dash - instead of em dash always
+Single-page marketing site for a foam manufacturer (B2B). Polish language throughout.
 
-### Strona (single-page)
+### Fonts
+
+One font loaded: **Inter** (imported as `Inter` from `next/font/google`, assigned to CSS var `--font-jakarta`). Both `--font-sans` and `--font-playfair` in `globals.css` resolve to the same `--font-jakarta` variable. Apply with Tailwind class `font-playfair` for headings, `font-sans` for body.
+
+Use normal dash `-` instead of em dash `—` in content.
+
+### Color system
+
+Colors are defined in `globals.css` `:root` and exposed as Tailwind utilities via `@theme inline`:
+
+| Tailwind class | Hex | Usage |
+|---|---|---|
+| `text-navy` / `bg-navy` | `#2E2E2E` | dark charcoal — headings, dark backgrounds |
+| `text-navy-light` / `bg-navy-light` | `#48A02E` | medium green — hover states |
+| `text-cream` / `bg-cream` | `#5DBE3D` | primary green — CTA buttons, accents |
+| `text-cream-light` / `bg-cream-light` | `#DFF2D4` | light green — subtle backgrounds |
+| `text-site-text` | `#1A1A1A` | body text |
+| `text-site-text-muted` | `#777777` | secondary text |
+
+### CSS utility vocabulary
+
+Always use these instead of arbitrary Tailwind values:
+
+```css
+/* Fluid typography */
+.text-fluid-hero   /* clamp(2.5rem, 6vw, 5.5rem) */
+.text-fluid-h2     /* clamp(1.75rem, 3.5vw, 3rem) */
+.text-fluid-h3     /* clamp(1.2rem, 2vw, 1.75rem) */
+.text-fluid-body   /* clamp(0.9375rem, 1.25vw, 1.125rem) */
+.text-fluid-sm     /* clamp(0.8125rem, 1vw, 0.9375rem) */
+
+/* Section spacing */
+.section-py        /* padding-top/bottom fluid clamp(4rem, 8vw, 7rem) */
+.section-px        /* padding-left/right fluid clamp(1.25rem, 5vw, 6rem) */
+
+/* Decorative */
+.overlay-navy      /* dark/green diagonal gradient overlay */
+.card-lift         /* hover: translateY(-6px) + shadow */
+.section-divider   /* short green gradient hr bar */
+.scrollbar-hide    /* hides scrollbar (used in carousel thumbnails) */
+
+/* Scroll-trigger animation classes (applied by AnimatedSection) */
+.animate-in-up / .animate-in-left / .animate-in-right / .animate-in-fade
+```
+
+### Utilities
+
+- `src/lib/cn.ts` — simple classname joiner (no clsx/cn dependency), use for conditional classes
+- `src/config/navigation.ts` — `NAV_LINKS` array (href + label) used by Navbar and Footer; single source of truth for nav section IDs
+
+### Section IDs (single-page navigation anchors)
+
+`#o-nas` · `#zastosowania` · `#oferta` · `#realizacje` · `#certyfikaty` · `#kontakt`
+
+### App structure
+
 ```
 src/app/
-  layout.tsx                    # root layout, fonts, metadata, JSON-LD LocalBusiness
-  page.tsx                      # home page (Server Component) — montuje wszystkie sekcje
-  globals.css                   # Tailwind base styles, @theme, animacje CSS
-  robots.ts                     # dynamiczny robots.txt
-  sitemap.ts                    # dynamiczny sitemap XML
-  api/contact/route.ts          # POST — formularz kontaktowy (Resend API)
-  polityka-prywatnosci/page.tsx # strona polityki prywatności
+  layout.tsx                    # root layout, Inter font, metadata, JSON-LD LocalBusiness
+  page.tsx                      # home page (Server Component) — mounts all sections
+  not-found.tsx                 # 404 page
+  globals.css                   # Tailwind base, @theme tokens, CSS animations
+  robots.ts                     # dynamic robots.txt
+  sitemap.ts                    # dynamic sitemap XML
+  og/route.tsx                  # GET — dynamic OG image generation
+  api/contact/route.ts          # POST — contact form (Resend API)
+  polityka-prywatnosci/page.tsx # privacy policy page
 ```
 
-### Komponenty
+### Components
+
 ```
 src/components/
-  navbar/Navbar.tsx         # fixed navbar, scroll state, full-screen mobile menu (slide z prawej)
-  hero/Hero.tsx             # sekcja hero
-  about/About.tsx           # o nas
-  offer/Offer.tsx           # 3 karty oferty (fizjoterapia, 7-strefowe, wykroje)
-  offer/OfferCard.tsx       # karta z IntersectionObserver + animacja
-  products/ProductGalleries.tsx  # 3 sekcje z karuzelami zdjęć
-  products/ProductCarousel.tsx   # karuzela z auto-play, thumbnails, progress bar
-  products/ProductionVideo.tsx   # wideo proces produkcji
-  why-us/WhyUs.tsx          # 6 kart wyróżników
-  contact/Contact.tsx       # sekcja kontakt (formularz + mapa + godziny)
-  contact/ContactForm.tsx   # formularz z walidacją, Resend API
-  contact/Map.tsx / MapInner.tsx  # Google Maps embed
-  footer/Footer.tsx         # stopka z nawigacją, danymi firmy, wykonanie
-  ui/AnimatedSection.tsx    # wrapper z IntersectionObserver + animacje wejścia
-  ui/Lightbox.tsx           # lightbox zdjęć
-  ui/ScrollToTop.tsx        # przycisk scroll to top
+  navbar/Navbar.tsx             # fixed navbar, scroll shadow, full-screen mobile menu
+  hero/Hero.tsx                 # hero section
+  about/About.tsx               # about section (#o-nas)
+  foam/FoamTypes.tsx            # foam types explainer
+  applications/Applications.tsx # use cases (#zastosowania)
+  offer/Offer.tsx + OfferCard.tsx  # 3 offer cards with IntersectionObserver animation (#oferta)
+  products/ProductGalleries.tsx # 3 photo carousel sections (#realizacje)
+  products/ProductCarousel.tsx  # carousel with auto-play, thumbnails, progress bar
+  products/ProductionVideo.tsx  # production process video
+  why-us/WhyUs.tsx              # 6 differentiator cards
+  certifications/Certifications.tsx  # certificates (#certyfikaty)
+  contact/Contact.tsx           # contact section (#kontakt)
+  contact/ContactForm.tsx       # form with validation, calls /api/contact
+  contact/Map.tsx + MapInner.tsx   # Google Maps embed (MapInner is "use client")
+  footer/Footer.tsx             # footer with nav, company data
+  ui/AnimatedSection.tsx        # IntersectionObserver scroll-trigger wrapper
+  ui/Lightbox.tsx               # photo lightbox
+  ui/ScrollToTop.tsx            # scroll-to-top button
+  ui/icons/FacebookIcon.tsx     # Facebook SVG icon
+```
+
+### AnimatedSection usage
+
+Wrap any element to animate on scroll entry:
+
+```tsx
+<AnimatedSection direction="up" delay={0.1}>
+  {/* content */}
+</AnimatedSection>
+```
+
+`direction`: `"up"` | `"left"` | `"right"` | `"fade"`. `delay` in seconds. Fires once, then disconnects observer.
+
+### Environment variables
+
+```
+RESEND_API_KEY   # required for /api/contact — email delivery via Resend
 ```
 
 ### SEO
+
 - `metadataBase`: `https://pianki-widula.pl`
-- JSON-LD: `LocalBusiness` + `hasOfferCatalog` z 3 `Service` (w `layout.tsx`)
-- `robots.ts` blokuje `/api/`, wskazuje sitemap
-- `public/llms.txt` — opis dla AI crawlerów
-- `public/assets/og_image.png` — 1200×630, OG image
+- JSON-LD: `LocalBusiness` + `hasOfferCatalog` with 3 `Service` entries (in `layout.tsx`)
+- `robots.ts` blocks `/api/`, points to sitemap
+- `public/llms.txt` — description for AI crawlers
+- `public/assets/og_image.png` — 1200×630 static OG image; dynamic OG via `og/route.tsx`
 
 ### Assets
+
 ```
 public/
-  favicon.png               # ikona kwadratowa (1254×1254)
-  logo-v3.png               # logo poziome (537×464) — desktop navbar + footer
-  logo.png                  # alternatywne logo
+  favicon.png               # square icon (1254×1254)
+  logo-v3.png               # horizontal logo — navbar + footer
   assets/
-    og_image.png            # OG image 1200×630
-    7strefowe/01–07.jpeg    # zdjęcia wkładów 7-strefowych
-    fizjoterapia/01–08.jpeg # zdjęcia materaców fizjoterapeutycznych
-    wykroje/01–14.jpeg      # zdjęcia wykrojów bezpyłowych
-    proces-produkcji.mp4    # wideo procesu produkcji
+    og_image.png            # static OG image 1200×630
+    7strefowe/01–07.jpeg    # 7-zone insert photos
+    fizjoterapia/01–08.jpeg # physiotherapy mattress photos
+    wykroje/01–14.jpeg      # dustless cut-out photos
+    proces-produkcji.mp4    # production process video
 ```
 
-Tailwind v4 uses `@tailwindcss/postcss` — no `tailwind.config.*` file, configured via CSS `@theme`.
+Tailwind v4: configured via CSS `@theme` in `globals.css` — no `tailwind.config.*` file.
 
-ESLint uses flat config (`eslint.config.mjs`) with `eslint-config-next/core-web-vitals` + `eslint-config-next/typescript`.
+ESLint: flat config (`eslint.config.mjs`) with `eslint-config-next/core-web-vitals` + `eslint-config-next/typescript`.
 
 ## Next.js 16 Breaking Changes
 
 **Always read `node_modules/next/dist/docs/` before writing Next.js code.**
-
-Key changes from v15:
 
 | What | How |
 |------|-----|
@@ -104,9 +178,9 @@ Key changes from v15:
 | Parallel routes | All slots require explicit `default.js` or build fails |
 | `next dev` output | Goes to `.next/dev` (not `.next`) |
 
-**Async params pattern:**
+Async params pattern:
+
 ```tsx
-// page.tsx
 export default async function Page({ params }: { params: Promise<{ id: string }> }) {
   const { id } = await params
 }
@@ -116,7 +190,7 @@ Run `npx next typegen` to generate `PageProps`, `LayoutProps`, `RouteContext` he
 
 ## React Compiler
 
-Enabled (`reactCompiler: true` in `next.config.ts`). Automatically memoizes components — do not manually add `useMemo`/`useCallback` for render optimization unless there's a specific non-compiler reason.
+Enabled (`reactCompiler: true` in `next.config.ts`). Do not manually add `useMemo`/`useCallback` for render optimization — the compiler handles it automatically.
 
 ## Available Claude Agents
 

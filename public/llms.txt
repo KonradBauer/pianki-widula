@@ -1,10 +1,10 @@
 # Pianki Tapicerskie Widuła
 
-FH Pianki Tapicerskie Jacek Widuła — przetwórnia pianek tapicerskich z ponad 15-letnim doświadczeniem. Bezpyłowe cięcie CNC (kształtki, formatki, wkłady materacowe). Siedziba: ul. Władysława Reymonta 136, 42-125 Kamyk k. Częstochowy, Polska.
+FH Pianki Tapicerskie Jacek Widuła — przetwórnia pianek tapicerskich z ponad 15-letnim doświadczeniem. Właściciel: Jacek Widuła. Bezpyłowe cięcie CNC (kształtki, formatki, wkłady materacowe). Siedziba: ul. Władysława Reymonta 136, 42-125 Kamyk k. Częstochowy, Polska.
 
 ## Specjalizacja
 
-Przetwórnia pianek tapicerskich na maszynach CNC — precyzyjne cięcie konturowe, pionowe i poziome. Bezpyłowe wycinanie kształtek, formatek i wkładów materacowych według dostarczonej dokumentacji. Obsługa B2B.
+Przetwórnia pianek tapicerskich na maszynach CNC — precyzyjne cięcie konturowe, pionowe i poziome z tolerancją ±1-2 mm. Bezpyłowe wycinanie kształtek, formatek i wkładów materacowych według dostarczonej dokumentacji. Obsługa B2B. Zamówienia jednostkowe i hurtowe.
 
 ## Rodzaje pianek w ofercie
 
@@ -15,7 +15,7 @@ Przetwórnia pianek tapicerskich na maszynach CNC — precyzyjne cięcie konturo
 
 ## Oferta produktowa
 
-- **Wkłady 7-strefowe profilowane** — wkłady do materaców z 7 strefami twardości, profilowane na maszynach CNC
+- **Wkłady 7-strefowe profilowane** — wkłady do materaców z 7 strefami twardości, profilowane na maszynach CNC, jednostronne i dwustronne
 - **Materace i wkłady do fizjoterapii** — dla szpitali, domów opieki i placówek rehabilitacyjnych
 - **Wykroje bezpyłowe** — metodą bezpyłową na maszynach CNC, dowolne kształty i wymiary
 
@@ -26,15 +26,29 @@ Przetwórnia pianek tapicerskich na maszynach CNC — precyzyjne cięcie konturo
 - Dziecięca (wózki dziecięce, foteliki samochodowe)
 - Zoologiczna (legowiska dla psów i kotów)
 - Sportowa (materace sportowe, maty do ćwiczeń)
-- Rehabilitacyjna (kształtki rehabilitacyjne, podkładki)
+- Rehabilitacyjna (kształtki rehabilitacyjne, materace przeciwodleżynowe)
 - Motoryzacyjna (materace do kamperów, tirów, przyczep kempingowych)
 - Akustyczna (panele akustyczne — piramidki piankowe)
 - Ogrodowa (meble ogrodowe, siedziska zewnętrzne)
 
 ## Certyfikaty
 
-- OEKO-TEX® Standard 100 Klasa I — pianka bezpieczna dla niemowląt
-- Atest higieniczny NIZP-PZH
+- OEKO-TEX® Standard 100 Klasa I — pianka bezpieczna dla niemowląt (certyfikat BESTPUR Polymers, PDF dostępny)
+- Atest higieniczny NIZP-PZH — Narodowy Instytut Zdrowia Publicznego (PDF dostępny)
+
+## Zamówienia i proces
+
+**Przyjmowane formaty plików:** DXF (preferowany do cięcia konturowego), PDF, szkice z wymiarami. W razie braku dokumentacji technicznej opracowujemy plik na podstawie próbki lub szkicu klienta.
+
+**Tolerancja cięcia:** ±1-2 mm. Cięcie bezpyłowe — czyste krawędzie bez zadzioru.
+
+**Czas realizacji:** 2-5 dni roboczych od potwierdzenia zamówienia i dostarczenia dokumentacji. Możliwy tryb ekspresowy.
+
+**Minimalne zamówienie:** Brak minimum ilościowego — przyjmujemy zamówienia od 1 sztuki. Realizujemy zarówno serie próbne, jak i zamówienia hurtowe.
+
+**Dostawa:** Transport na terenie całej Polski bezpośrednio do klienta. Możliwy odbiór osobisty w Kamyku k. Częstochowy.
+
+**Proces zamówienia:** Kontakt telefoniczny lub przez formularz → wycena na podstawie wymiarów i specyfikacji → potwierdzenie → realizacja → dostawa. Czas odpowiedzi: do 24 godzin w dni robocze.
 
 ## Dane kontaktowe
 
@@ -50,3 +64,4 @@ Przetwórnia pianek tapicerskich na maszynach CNC — precyzyjne cięcie konturo
 - Obsługa ogólnopolska, dostawa na terenie całej Polski
 - Cięcie na wymiar według podanych wymiarów
 - Zamówienia indywidualne i hurtowe
+- Facebook: https://www.facebook.com/profile.php?id=100080380672291

@@ -20,8 +20,11 @@ export default function About() {
             <p className="text-fluid-body text-site-text-muted mb-6">
               {highlight("Specjalizujemy się w precyzyjnym przetwarzaniu pianki tapicerskiej na maszynach CNC, dostarczając najwyższej jakości kształtki, formatki oraz wkłady materacowe dopasowane do Twoich potrzeb.")}
             </p>
-            <p className="text-fluid-body text-site-text-muted mb-8">
+            <p className="text-fluid-body text-site-text-muted mb-6">
               {highlight("Wykorzystując zaawansowaną technologię CNC, przekształcamy piankę tapicerską w perfekcyjnie docięte formatki, kształtki i wkłady materacowe 7 strefowe jednostronne i dwustronne - bezpyłowo, precyzyjnie, na wymiar.")}
+            </p>
+            <p className="text-fluid-body text-site-text-muted mb-8">
+              Firma prowadzona przez <strong className="text-navy">Jacka Widułę</strong> - z ponad 15-letnim doświadczeniem w branży tapicerskiej. Obsługujemy producentów mebli, materaców i wiele innych branż w całej Polsce.
             </p>
             <a
               href="#kontakt"

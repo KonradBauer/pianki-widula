@@ -1,5 +1,3 @@
-"use client";
-
 import { highlight } from "@/lib/highlight";
 
 export default function Hero() {

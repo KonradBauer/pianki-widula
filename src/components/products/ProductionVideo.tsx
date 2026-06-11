@@ -26,8 +26,8 @@ export default function ProductionVideo() {
               muted
               loop
               playsInline
+              preload="none"
               className="w-full aspect-video object-cover"
-
             >
               <source src="/assets/proces-produkcji.mp4" type="video/mp4" />
             </video>
