@@ -51,10 +51,10 @@ const SECTIONS = [
     description:
       "Wkłady piankowe do legowisk dla psów, kotów i innych zwierząt domowych - wycinane bezpyłowo na maszynach CNC według dowolnego wymiaru i kształtu. Pianki HR i RE odporne na odkształcenia, łatwe do mycia. Idealne dla producentów legowisk i akcesoriów zoologicznych.",
     images: [
+      "/assets/legowiska/4.png",
       "/assets/legowiska/1.png",
       "/assets/legowiska/2.png",
       "/assets/legowiska/3.png",
-      "/assets/legowiska/4.png",
     ],
     brochure: null as string | null,
   },
