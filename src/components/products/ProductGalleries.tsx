@@ -18,7 +18,6 @@ const SECTIONS = [
       "Wykroje piankowe wykonywane metodą bezpyłową na sterowanych numerycznie maszynach CNC. Precyzyjne kontury i czyste krawędzie - realizujemy nawet najbardziej zaawansowane projekty.",
     images: [
       ...jpegRange("wykroje", 14),
-      "/assets/wykroje/15.png",
       "/assets/wykroje/16.png",
       "/assets/wykroje/17.png",
       "/assets/wykroje/18.jpeg",
@@ -55,6 +54,7 @@ const SECTIONS = [
       "/assets/legowiska/1.png",
       "/assets/legowiska/2.png",
       "/assets/legowiska/3.png",
+      "/assets/legowiska/4.png",
     ],
     brochure: null as string | null,
   },

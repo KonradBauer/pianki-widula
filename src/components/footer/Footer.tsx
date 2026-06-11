@@ -11,7 +11,7 @@ export default function Footer() {
           {/* Brand */}
           <div>
             <div className="mb-4">
-              <div className="bg-white rounded-xl px-3 py-2 inline-block">
+              <div className="rounded-xl px-3 py-2 inline-block" style={{ backgroundColor: '#3D3D3D' }}>
                 <Image
                   src="/logo.png"
                   alt="Pianki Tapicerskie Widuła"

@@ -10,7 +10,7 @@ const PRODUCTS = [
       "Precyzyjnie cięte kształtki i formatki piankowe dla producentów mebli tapicerowanych. Pianki poliuretanowe standardowe, trudnopalne (Typ T) i wysokoelastyczne (HR)  - dowolne wymiary i kształty.",
     properties: ["Kanapy", "Fotele", "Sofy", "Meble ogrodowe"],
     icon: "🛋️",
-    image: "/assets/oferta/meble-tapicerowane.jpeg",
+    image: "/assets/oferta/meble-tapicerowane.png",
   },
   {
     name: "Producenci materaców",
@@ -19,7 +19,7 @@ const PRODUCTS = [
       "Wkłady materacowe 7-strefowe profilowane CNC, wkłady do fizjoterapii i rehabilitacji, materace do kamperów i tirów. Pianki HR, Visco/Memory i RE  - każda twardość i gęstość.",
     properties: ["Wkłady 7-strefowe", "Fizjoterapia", "Kampery", "Sportowe"],
     icon: "🛏️",
-    image: "/assets/oferta/materace.jpeg",
+    image: "/assets/oferta/materace.png",
   },
   {
     name: "Pozostałe zastosowania",
@@ -28,7 +28,7 @@ const PRODUCTS = [
       "Pianki do wózków dziecięcych, fotelików, legowisk dla zwierząt, paneli akustycznych (piramidki) i wielu innych. Bezpyłowe cięcie CNC umożliwia realizację nawet najbardziej złożonych kształtów.",
     properties: ["Wózki dziecięce", "Legowiska", "Panele akustyczne", "Foteliki"],
     icon: "📦",
-    image: "/assets/oferta/pozostale.jpeg",
+    image: "/assets/oferta/pozostałe.webp",
   },
 ];
 

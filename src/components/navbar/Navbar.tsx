@@ -73,7 +73,7 @@ export default function Navbar() {
             className="relative z-50 flex items-center group"
             onClick={handleNavClick}
           >
-            <div className="md:hidden bg-white rounded-lg px-2 py-1 shadow-sm">
+            <div className="md:hidden rounded-lg px-2 py-1 shadow-sm" style={{ backgroundColor: '#3D3D3D' }}>
               <Image
                 src="/logo.png"
                 alt="Pianki Tapicerskie Widuła"
@@ -82,7 +82,7 @@ export default function Navbar() {
                 className="object-contain h-28 w-auto"
               />
             </div>
-            <div className="hidden md:block rounded-xl px-3 py-1.5 transition-all duration-300 bg-white shadow-sm">
+            <div className="hidden md:block rounded-xl px-3 py-1.5 transition-all duration-300 shadow-sm" style={{ backgroundColor: '#3D3D3D' }}>
               <Image
                 src="/logo.png"
                 alt="Pianki Tapicerskie Widuła"

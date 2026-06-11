@@ -26,7 +26,7 @@ const APPLICATIONS = [
   {
     title: "Sportowa",
     description: "Materace gimnastyczne i asekuracyjne oraz klocki i tory przeszkód dla dzieci",
-    image: "/assets/zastosowania/sportowa.png",
+    image: "/assets/zastosowania/sportowa.jpg",
   },
   {
     title: "Rehabilitacyjna",
@@ -36,7 +36,7 @@ const APPLICATIONS = [
   {
     title: "Motoryzacyjna",
     description: "Materace do kamperów, tirów i przyczep kempingowych",
-    image: "/assets/zastosowania/motoryzacyjna.jpg",
+    image: "/assets/zastosowania/motoryzacyjna.webp",
   },
   {
     title: "Akustyczna",
@@ -46,7 +46,7 @@ const APPLICATIONS = [
   {
     title: "Ogrodowa",
     description: "Wkłady do mebli ogrodowych i siedzisk zewnętrznych",
-    image: "/assets/zastosowania/ogrodowa.jpg",
+    image: "/assets/zastosowania/ogrodowa.webp",
   },
 ];
 
