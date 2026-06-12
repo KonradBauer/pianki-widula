@@ -209,6 +209,9 @@ export const metadata: Metadata = {
   alternates: {
     canonical: "/",
   },
+  verification: {
+    google: "hc1xG1d3aYPrkJHGxv8lKvhiVFNsFEaDvDAgXVCEdl4",
+  },
   openGraph: {
     title: "Przetwórnia Pianek Widuła - Kształtki i Formatki CNC",
     description:
