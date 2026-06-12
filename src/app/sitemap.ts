@@ -4,15 +4,11 @@ export default function sitemap(): MetadataRoute.Sitemap {
   return [
     {
       url: "https://pianki-widula.pl",
-      lastModified: new Date("2026-06-11"),
-      changeFrequency: "monthly",
-      priority: 1,
+      lastModified: new Date("2026-06-12"),
     },
     {
       url: "https://pianki-widula.pl/polityka-prywatnosci",
-      lastModified: new Date("2026-06-11"),
-      changeFrequency: "yearly",
-      priority: 0.3,
+      lastModified: new Date("2026-06-12"),
     },
   ];
 }
