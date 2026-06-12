@@ -219,10 +219,10 @@ export const metadata: Metadata = {
     siteName: "Pianki Tapicerskie Widuła",
     images: [
       {
-        url: "/og",
+        url: "/og-image.png",
         width: 1200,
         height: 630,
-        alt: "Pianki Tapicerskie Widuła  - Kamyk k. Częstochowy",
+        alt: "Pianki Tapicerskie Widuła - Kamyk k. Częstochowy",
       },
     ],
   },
@@ -230,7 +230,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Przetwórnia Pianek Widuła - Kształtki CNC",
     description: "Bezpyłowe wycinanie kształtek piankowych CNC. Pianki HR, Visco, Typ T. B2B. Kamyk k. Częstochowy.",
-    images: ["/og"],
+    images: ["/og-image.png"],
   },
 };
 

@@ -113,24 +113,45 @@ export async function GET() {
             KSZTAŁTKI · FORMATKI · WKŁADY CNC
           </span>
 
-          {/* URL + location */}
-          <div style={{ display: "flex", alignItems: "center", gap: "16px" }}>
-            <span style={{
-              fontSize: "16px",
-              color: "rgba(255,255,255,0.4)",
-              fontFamily: "sans-serif",
-              letterSpacing: "1px",
-            }}>
-              pianki-widula.pl
-            </span>
-            <span style={{ color: "rgba(93,190,61,0.4)", fontSize: "14px" }}>·</span>
-            <span style={{
-              fontSize: "14px",
-              color: "rgba(255,255,255,0.3)",
-              fontFamily: "sans-serif",
-            }}>
-              Kamyk k. Częstochowy
-            </span>
+          {/* Contact info */}
+          <div style={{ display: "flex", flexDirection: "column", gap: "10px" }}>
+            <div style={{ display: "flex", alignItems: "center", gap: "16px" }}>
+              <span style={{
+                fontSize: "20px",
+                color: "#5DBE3D",
+                fontFamily: "sans-serif",
+                fontWeight: 600,
+              }}>
+                +48 502 490 104
+              </span>
+              <span style={{ color: "rgba(93,190,61,0.4)", fontSize: "14px" }}>·</span>
+              <span style={{
+                fontSize: "16px",
+                color: "rgba(255,255,255,0.5)",
+                fontFamily: "sans-serif",
+              }}>
+                piankapianka@vp.pl
+              </span>
+            </div>
+            <div style={{ display: "flex", alignItems: "center", gap: "16px" }}>
+              <span style={{
+                fontSize: "14px",
+                color: "rgba(255,255,255,0.35)",
+                fontFamily: "sans-serif",
+                letterSpacing: "0.5px",
+              }}>
+                ul. Reymonta 136, Kamyk k. Częstochowy
+              </span>
+              <span style={{ color: "rgba(93,190,61,0.3)", fontSize: "12px" }}>·</span>
+              <span style={{
+                fontSize: "14px",
+                color: "rgba(255,255,255,0.25)",
+                fontFamily: "sans-serif",
+                letterSpacing: "1px",
+              }}>
+                pianki-widula.pl
+              </span>
+            </div>
           </div>
         </div>
 
