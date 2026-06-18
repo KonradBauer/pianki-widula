@@ -8,6 +8,7 @@ import ProductGalleries from "@/components/products/ProductGalleries";
 import ProductionVideo from "@/components/products/ProductionVideo";
 import WhyUs from "@/components/why-us/WhyUs";
 import Certifications from "@/components/certifications/Certifications";
+import FAQ from "@/components/faq/FAQ";
 import Contact from "@/components/contact/Contact";
 import Footer from "@/components/footer/Footer";
 import ScrollToTop from "@/components/ui/ScrollToTop";
@@ -26,6 +27,7 @@ export default function Page() {
         <ProductionVideo />
         <WhyUs />
         <Certifications />
+        <FAQ />
         <Contact />
       </main>
       <Footer />

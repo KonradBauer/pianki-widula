@@ -65,3 +65,17 @@ Przetwórnia pianek tapicerskich na maszynach CNC — precyzyjne cięcie konturo
 - Cięcie na wymiar według podanych wymiarów
 - Zamówienia indywidualne i hurtowe
 - Facebook: https://www.facebook.com/profile.php?id=100080380672291
+
+## Key pages
+
+- [Strona główna](https://pianki-widula.pl/): Przetwórnia pianek tapicerskich CNC - kształtki, formatki, wkłady materacowe
+- [Polityka prywatności](https://pianki-widula.pl/polityka-prywatnosci/): Zasady przetwarzania danych osobowych
+
+## FAQ
+
+- Przyjmowane formaty plików: DXF (preferowany), PDF, szkice z wymiarami
+- Minimalny czas realizacji: 2-5 dni roboczych od potwierdzenia zamówienia
+- Brak minimalnej ilości zamówienia - przyjmujemy od 1 sztuki
+- Tolerancja cięcia CNC: ±1-2 mm, cięcie bezpyłowe
+- Dostawa: ogólnopolska, odbiór osobisty w Kamyku k. Częstochowy
+- Odpowiedź na wycenę: do 24 godzin w dni robocze

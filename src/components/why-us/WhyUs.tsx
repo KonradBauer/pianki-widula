@@ -7,42 +7,42 @@ const FEATURES = [
     icon: "✂️",
     title: "Cięcie na wymiar",
     description:
-      "Tniemy pianki dokładnie według podanych wymiarów. Zero odpadów, idealne dopasowanie do twojego materaca lub mebla.",
+      "Tniemy pianki bezpyłowo na maszynach CNC z tolerancją ±1-2 mm. Dostarczysz wymiary w DXF, PDF lub szkicu - przetniemy dokładnie na wymiar, bez zadzioru i bez kurzu piankowego.",
     animated: false,
   },
   {
     icon: "🏅",
     title: "Sprawdzona jakość",
     description:
-      "Współpracujemy wyłącznie z renomowanymi producentami. Każda pianka spełnia normy bezpieczeństwa i wytrzymałości.",
+      "Pianki z certyfikatem OEKO-TEX® Standard 100 Klasa I i atestem higienicznym NIZP-PZH. Każda dostarczona partia spełnia normy bezpieczeństwa i wytrzymałości, w tym normy trudnopalności PN-EN 1021 tam gdzie wymagane.",
     animated: false,
   },
   {
     icon: "🚚",
     title: "Zapewniamy transport",
     description:
-      "Dowozimy zamówienia bezpośrednio do klienta. Nie musisz martwić się o odbiór - zajmiemy się dostawą na terenie całej Polski.",
+      "Dowozimy zamówienia bezpośrednio do hali produkcyjnej klienta - na terenie całej Polski. Możliwy odbiór osobisty w Kamyku k. Częstochowy (pon-pt 08:00-16:00, sob 08:00-13:00).",
     animated: true,
   },
   {
     icon: "💬",
     title: "Doradztwo",
     description:
-      "Pomożemy dobrać odpowiednią piankę do twoich potrzeb. Nie wiesz co wybrać? Skontaktuj się - doradzimy.",
+      "Pomożemy dobrać twardość, gęstość i typ pianki do zastosowania. Nie wiesz czy potrzebujesz HR, Visco czy Typ T? Zadzwoń lub napisz - doradzimy i przygotujemy próbki.",
     animated: false,
   },
   {
     icon: "📐",
     title: "Dowolne wymiary",
     description:
-      "Standardowe i niestandardowe rozmiary. Pojedyncze sztuki i zamówienia hurtowe - obsługujemy każde zlecenie.",
+      "Brak minimalnej ilości - przyjmujemy zamówienia od 1 sztuki. Standardowe i niestandardowe wymiary. Realizacja 2-5 dni roboczych, możliwy tryb ekspresowy.",
     animated: false,
   },
   {
     icon: "🤝",
     title: "Wieloletnie doświadczenie",
     description:
-      "Działamy od lat w branży tapicerskiej. Wiemy co robimy i dbamy o to, żeby każdy klient był zadowolony.",
+      "Firma Jacka Widuły działa w branży przetwórstwa pianek tapicerskich od ponad 15 lat. Setki obsłużonych producentów mebli, materaców i klientów B2B w całej Polsce.",
     animated: false,
   },
 ];
@@ -56,7 +56,7 @@ export default function WhyUs() {
             Dlaczego my
           </span>
           <h2 className="text-fluid-h2 font-playfair text-navy mb-4">
-            Co nas wyróżnia
+            Dlaczego producenci wybierają Pianki Widuła?
           </h2>
           <div className="section-divider mx-auto" />
         </AnimatedSection>

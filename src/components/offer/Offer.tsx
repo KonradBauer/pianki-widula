@@ -39,7 +39,7 @@ export default function Offer() {
             Oferta
           </span>
           <h2 className="text-fluid-h2 font-playfair text-white mb-4">
-            Nasza oferta
+            Dla jakich branż tniemy pianki tapicerskie CNC?
           </h2>
           <div className="section-divider mx-auto mb-6" />
           <p className="text-fluid-body text-white/60 max-w-2xl mx-auto">
