@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import FacebookIcon from "@/components/ui/icons/FacebookIcon";
+import InstagramIcon from "@/components/ui/icons/InstagramIcon";
 import { NAV_LINKS } from "@/config/navigation";
 
 export default function Footer() {
@@ -25,16 +26,27 @@ export default function Footer() {
               Firma Handlowa Pianki Tapicerskie Jacek Widuła. Sprzedaż pianek
               do materaców i tapicerki. Cięcie na wymiar.
             </p>
-            {/* Facebook */}
-            <a
-              href="https://www.facebook.com/profile.php?id=100080380672291"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 text-white/60 hover:text-cream transition-colors text-fluid-sm"
-            >
-              <FacebookIcon className="w-5 h-5" />
-              Facebook
-            </a>
+            {/* Social */}
+            <div className="flex flex-col gap-3">
+              <a
+                href="https://www.facebook.com/profile.php?id=100080380672291"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 text-white/60 hover:text-cream transition-colors text-fluid-sm"
+              >
+                <FacebookIcon className="w-5 h-5" />
+                Facebook
+              </a>
+              <a
+                href="https://www.instagram.com/piankitapicerskiejacekwidula/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 text-white/60 hover:text-cream transition-colors text-fluid-sm"
+              >
+                <InstagramIcon className="w-5 h-5" />
+                Instagram
+              </a>
+            </div>
           </div>
 
           {/* Navigation */}

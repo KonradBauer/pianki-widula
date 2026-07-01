@@ -6,6 +6,7 @@ import Link from "next/link";
 import { cn } from "@/lib/cn";
 import { NAV_LINKS } from "@/config/navigation";
 import FacebookIcon from "@/components/ui/icons/FacebookIcon";
+import InstagramIcon from "@/components/ui/icons/InstagramIcon";
 
 const STAGGER_DELAYS = [
   "delay-[80ms]",
@@ -187,15 +188,26 @@ export default function Navbar() {
           )}
         >
           <span className="text-white/30 text-xs tracking-widest uppercase">Znajdź nas</span>
-          <a
-            href="https://www.facebook.com/profile.php?id=100080380672291"
-            target="_blank"
-            rel="noopener noreferrer"
-            aria-label="Facebook"
-            className="w-11 h-11 rounded-full bg-white/10 flex items-center justify-center hover:bg-cream/20 transition-colors"
-          >
-            <FacebookIcon className="w-5 h-5 text-white" />
-          </a>
+          <div className="flex items-center gap-3">
+            <a
+              href="https://www.facebook.com/profile.php?id=100080380672291"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Facebook"
+              className="w-11 h-11 rounded-full bg-white/10 flex items-center justify-center hover:bg-cream/20 transition-colors"
+            >
+              <FacebookIcon className="w-5 h-5 text-white" />
+            </a>
+            <a
+              href="https://www.instagram.com/piankitapicerskiejacekwidula/"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Instagram"
+              className="w-11 h-11 rounded-full bg-white/10 flex items-center justify-center hover:bg-cream/20 transition-colors"
+            >
+              <InstagramIcon className="w-5 h-5 text-white" />
+            </a>
+          </div>
         </div>
       </div>
     </>
