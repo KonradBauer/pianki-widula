@@ -56,6 +56,7 @@ const jsonLd = {
   taxID: "5741004318",
   sameAs: [
     "https://www.facebook.com/profile.php?id=100080380672291",
+    "https://www.instagram.com/piankitapicerskiejacekwidula/",
   ],
   description:
     "Przetwórnia pianek tapicerskich Widuła - bezpyłowe wycinanie kształtek, formatek i wkładów materacowych na maszynach CNC. Pianki HR, Visco, Typ T, RE. Cięcie konturowe. B2B. Kamyk k. Częstochowy.",
