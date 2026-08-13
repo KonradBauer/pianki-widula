@@ -86,7 +86,7 @@ src/app/
   robots.ts                     # dynamic robots.txt
   sitemap.ts                    # dynamic sitemap XML
   og/route.tsx                  # GET — dynamic OG image generation
-  api/contact/route.ts          # POST — contact form (Resend API)
+  api/contact/route.ts          # POST — contact form (Brevo API)
   polityka-prywatnosci/page.tsx # privacy policy page
 ```
 
@@ -130,7 +130,8 @@ Wrap any element to animate on scroll entry:
 ### Environment variables
 
 ```
-RESEND_API_KEY   # required for /api/contact — email delivery via Resend
+BREVO_API_KEY       # required for /api/contact — email delivery via Brevo
+BREVO_SENDER_EMAIL  # verified sender address in Brevo
 ```
 
 ### SEO

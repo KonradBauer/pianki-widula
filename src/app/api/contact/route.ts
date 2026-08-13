@@ -71,18 +71,19 @@ export async function POST(req: NextRequest) {
 </body>
 </html>`;
 
-  const res = await fetch("https://api.resend.com/emails", {
+  const res = await fetch("https://api.brevo.com/v3/smtp/email", {
     method: "POST",
     headers: {
-      Authorization: `Bearer ${process.env.RESEND_API_KEY}`,
+      "api-key": process.env.BREVO_API_KEY ?? "",
       "Content-Type": "application/json",
+      Accept: "application/json",
     },
     body: JSON.stringify({
-      from: "Formularz Widuła <onboarding@resend.dev>",
-      to: "piankapianka@vp.pl",
-      reply_to: email,
+      sender: { name: "Formularz Widuła", email: process.env.BREVO_SENDER_EMAIL },
+      to: [{ email: "piankapianka@vp.pl" }],
+      replyTo: { email, name },
       subject: `Zapytanie od ${name} - pianki-widula.pl`,
-      html,
+      htmlContent: html,
     }),
   });
 

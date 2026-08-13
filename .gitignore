@@ -44,3 +44,6 @@ next-env.d.ts
 compound-engineering-plugin-main/
 .claude
 CLAUDE.md
+
+.vercel
+.env*
