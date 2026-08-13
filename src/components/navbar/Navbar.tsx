@@ -80,6 +80,8 @@ export default function Navbar() {
                 alt="Pianki Tapicerskie Widuła"
                 width={400}
                 height={140}
+                priority
+                sizes="(min-width: 768px) 0px, 320px"
                 className="object-contain h-28 w-auto"
               />
             </div>
@@ -89,6 +91,8 @@ export default function Navbar() {
                 alt="Pianki Tapicerskie Widuła"
                 width={560}
                 height={200}
+                priority
+                sizes="(min-width: 768px) 360px, 0px"
                 className="object-contain h-32 w-auto"
               />
             </div>
