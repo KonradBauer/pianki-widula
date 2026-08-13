@@ -87,34 +87,7 @@ export default function ContactForm() {
 
   return (
     <div className="flex flex-col gap-5">
-      <div
-        role="status"
-        aria-live="polite"
-        className="rounded-xl border border-amber-200 bg-amber-50 px-4 py-4 flex flex-col gap-2"
-      >
-        <p className="text-sm font-semibold text-amber-800">
-          Formularz będzie dostępny wkrótce
-        </p>
-        <p className="text-xs text-amber-700 leading-relaxed">
-          Aktualnie najlepiej kontaktować się bezpośrednio:
-        </p>
-        <div className="flex flex-col gap-1">
-          <a
-            href="tel:+48502490104"
-            className="text-xs font-medium text-amber-900 hover:text-navy transition-colors"
-          >
-            📞 +48 502 490 104
-          </a>
-          <a
-            href="mailto:piankapianka@vp.pl"
-            className="text-xs font-medium text-amber-900 hover:text-navy transition-colors"
-          >
-            ✉ piankapianka@vp.pl
-          </a>
-        </div>
-      </div>
-
-      <form onSubmit={onSubmit} noValidate className="flex flex-col gap-5 opacity-40 pointer-events-none select-none" aria-hidden="true">
+      <form onSubmit={onSubmit} noValidate className="flex flex-col gap-5">
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
         <Field label="Imię i nazwisko *" error={errors.name}>
           <input
