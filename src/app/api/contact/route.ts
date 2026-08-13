@@ -88,8 +88,7 @@ export async function POST(req: NextRequest) {
   });
 
   if (!res.ok) {
-    const debugBody = await res.text();
-    return NextResponse.json({ error: "Email send failed", debugStatus: res.status, debugBody, hasKey: !!process.env.BREVO_API_KEY, hasSender: !!process.env.BREVO_SENDER_EMAIL }, { status: 500 });
+    return NextResponse.json({ error: "Email send failed" }, { status: 500 });
   }
 
   return NextResponse.json({ success: true });
